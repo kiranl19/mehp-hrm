@@ -1,0 +1,185 @@
+/*------------------------------------------------------------------
+[Master Stylesheet]
+
+Project        :   Dayone - Multipurpose Admin & Dashboard Template
+Version        :   V.1
+Create Date    :   23/04/2021
+Copyright      :   Spruko Technologies Private Limited 
+Author         :   Spruko
+Author URL     :   https://themeforest.net/user/spruko
+Support	       :   support@spruko.com
+License        :   Licensed under ThemeForest License
+
+-------------------------------------------------------------------*/
+
+@import "variables";
+
+/*
+1.  accordions
+2.  bootstrap-datepicker
+3.  daterangepicker
+4.  bootstrap-timepicker
+5.  calendar
+6.  Buttons
+7.  Card
+8.  c3-chart
+9.  accept-cookies
+10. cookies
+11. jquery.countdown
+12. buttons.bootstrap
+13. dataTables.bootstrap
+14. responsive.bootstrap5
+15. datepicker
+16. daterangepicker
+17. dragula
+18. fancy_fileupload
+19. fileupload
+20. smart_wizard
+21. smart_wizard_theme_dots
+22. fullcalendar
+23. twentytwenty
+24. cropme
+25. intlTelInput
+26. ion.rangeSlider
+27. ion.rangeSlider.skinFlat
+28. jquery.autocomplete
+29. jquery.steps
+30. jquery.transfer
+31. jquery-ui
+32. jquery-jvectormap
+33. leaflet
+34. gallery
+35. lightslider
+36. modal-datepicker
+37. morris
+38. multi
+39. multiple-select
+40. newsticker
+41. jquery.growl
+42. notifIt
+43. owl-carousel
+44. pignose.calendar
+46. p-scrollbar
+47. quill.snow
+48. quill.bubble
+49. rating-themes
+50. ratings
+51. demo
+52. star-rating-svg
+53. select2.min
+54. sidebar
+53. spectrum-colorpicker
+54. summernote
+55. sumoselect
+56. jquery.sweet-modal
+57. sweetalert
+58. jquery.timepicker
+59. treeview
+60. richtext
+*/
+
+/* ###### plugins ####### */
+@import "plugins/accordion/accordions";
+@import "plugins/bootstrap-datepicker/bootstrap-datepicker";
+@import "plugins/bootstrap-daterangepicker/daterangepicker";
+@import "plugins/bootstrap-timepicker/bootstrap-timepicker";
+@import "plugins/calendar/calendar";
+@import "plugins/charts-c3/c3-chart";
+@import "plugins/cookies/accept-cookies";
+@import "plugins/cookies/cookies";
+@import "plugins/countdown/jquery.countdown";
+@import "plugins/datatable/css/buttons.bootstrap";
+@import "plugins/datatable/css/dataTables.bootstrap";
+@import "plugins/datatable/css/responsive.bootstrap5";
+@import "plugins/date-picker/datepicker";
+@import "plugins/daterangepicker/daterangepicker";
+@import "plugins/dragula/dragula";
+@import "plugins/fancyuploder/fancy_fileupload";
+@import "plugins/fileupload/css/fileupload";
+@import "plugins/formwizard/smart_wizard";
+@import "plugins/formwizard/smart_wizard_theme_dots";
+@import "plugins/fullcalendar/fullcalendar";
+@import "plugins/images-comparsion/twentytwenty";
+@import "plugins/img-crop/cropme";
+@import "plugins/intl-tel-input-master/intlTelInput";
+@import "plugins/ion-rangeslider/css/ion.rangeSlider";
+@import "plugins/ion-rangeslider/css/ion.rangeSlider.skinFlat";
+@import "plugins/jquery.autocomplete/jquery.autocomplete";
+@import "plugins/jQuery-countdowntimer/jQuery.countdownTimer";
+// @import "plugins/jquery-steps/jquery.steps";
+@import "plugins/jQuerytransfer/jquery.transfer";
+// @import "plugins/jquery-ui/jquery-ui";
+@import "plugins/jvectormap/jquery-jvectormap";
+@import "plugins/leaflet/leaflet";
+@import "plugins/lightgallery/gallery";
+@import "plugins/lightslider/css/lightslider";
+@import "plugins/modal-datepicker/modal-datepicker";
+@import "plugins/morris/morris";
+@import "plugins/multi/multi";
+@import "plugins/multipleselect/multiple-select";
+@import "plugins/newsticker/newsticker";
+@import "plugins/notify/css/jquery.growl";
+@import "plugins/notify/css/notifIt";
+@import "plugins/owl-carousel/owl-carousel";
+@import "plugins/pg-calendar-master/pignose.calendar";
+@import "plugins/p-scrollbar/p-scrollbar";
+@import "plugins/quill/quill.snow";
+@import "plugins/quill/quill.bubble";
+@import "plugins/rating/css/rating-themes.scss";
+@import "plugins/rating/css/ratings.scss";
+// @import "plugins/ratings-2/demo";
+@import "plugins/ratings-2/star-rating-svg";
+@import "plugins/select2/select2.min";
+@import "plugins/sidebar/sidebar";
+@import "plugins/spectrum-colorpicker/spectrum-colorpicker";
+@import "plugins/summer-note/summernote";
+@import "plugins/sumoselect/sumoselect";
+// @import "plugins/sweet-alert/jquery.sweet-modal";
+@import "plugins/sweet-alert/sweetalert";
+@import "plugins/time-picker/jquery.timepicker";
+@import "plugins/treeview/treeview";
+@import "plugins/wysiwyag/richtext";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
