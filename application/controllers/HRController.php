@@ -1,18 +1,21 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class HRController extends CI_Controller {
+class HRController extends CI_Controller
+{
 
-	function __construct(){
+	function __construct()
+	{
 		parent::__construct();
 		$this->load->helper('url');
-	}
+		$this->load->library('session');
+		// print_r($_SESSION);die;
 
-	public function index()
-	{
-		$this->load->view('template/header-script');
-		$this->load->view('login/login-1');
+		if (!isset($_SESSION['login'])) {
+			redirect('/');
+		}
 	}
+	
 
 	public function hr_dashboard()
 	{
@@ -189,5 +192,4 @@ class HRController extends CI_Controller {
 		$this->load->view('hr/hr-settings');
 		$this->load->view('template/footer');
 	}
-
 }

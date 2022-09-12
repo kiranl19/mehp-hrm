@@ -128,7 +128,13 @@ $route['superadmin-admins'] 		= 'SuperadminController/superadmin_admins';
 $route['superadmin-settings'] 		= 'SuperadminController/superadmin_settings';
 $route['superadmin-role'] 			= 'SuperadminController/superadmin_role';
 
+// Authentication
+// $route['login']	= 'HRController/login';
+$route['auth']	= 'AuthController/auth';
+$route['logout']	= 'AuthController/logout';
 
-$route['default_controller'] = 'HRController';
+
+
+$route['default_controller'] = 'AuthController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

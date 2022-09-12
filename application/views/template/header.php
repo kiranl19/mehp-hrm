@@ -196,7 +196,7 @@
 										<i class="feather feather-edit-2 me-3 fs-16 my-auto"></i>
 										<div class="mt-1">Change Password</div>
 									</a>
-									<a class="dropdown-item d-flex" href="login-1.html">
+									<a class="dropdown-item d-flex" href="logout">
 										<i class="feather feather-power me-3 fs-16 my-auto"></i>
 										<div class="mt-1">Sign Out</div>
 									</a>
