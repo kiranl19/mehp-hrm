@@ -3,10 +3,10 @@
 	<div class="container-fluid main-container">
 		<div class="d-flex">
 			<a class="header-brand" href="index.html">
-				<img src="<?php echo base_url() ?>assets/images/brand/logo.png" class="header-brand-img desktop-lgo" alt="Dayonelogo">
-				<img src="<?php echo base_url() ?>assets/images/brand/logo-white.png" class="header-brand-img dark-logo" alt="Dayonelogo">
-				<img src="<?php echo base_url() ?>assets/images/brand/favicon.png" class="header-brand-img mobile-logo" alt="Dayonelogo">
-				<img src="<?php echo base_url() ?>assets/images/brand/favicon1.png" class="header-brand-img darkmobile-logo" alt="Dayonelogo">
+				<img src="<?php echo base_url() ?>assets/images/me/MELogo.png" class="header-brand-img desktop-lgo" style="width:25%" alt="Dayonelogo">
+				<img src="<?php echo base_url() ?>assets/images/me/MELogo.png" class="header-brand-img dark-logo" style="width:25%" alt="Dayonelogo">
+				<img src="<?php echo base_url() ?>assets/images/me/favicon_new.png" class="header-brand-img mobile-logo" style="width:25%" alt="Dayonelogo">
+				<img src="<?php echo base_url() ?>assets/images/me/favicon_new.png" class="header-brand-img darkmobile-logo" style="width:25%" alt="Dayonelogo">
 			</a>
 			<div class="app-sidebar__toggle" data-bs-toggle="sidebar">
 				<a class="open-toggle" href="javascript:void(0);">
@@ -172,13 +172,14 @@
 							<div class="dropdown profile-dropdown">
 								<a href="javascript:void(0);" class="nav-link pe-1 ps-0 leading-none" data-bs-toggle="dropdown">
 									<span>
-										<img src="<?php echo base_url() ?>assets/images/users/16.jpg" alt="img" class="avatar avatar-md bradius">
+										<?php $profile = $_SESSION['profile'] ?>
+										<img src="<?php echo base_url() ?>assets/images/profile/<?php echo $profile ?>" alt="img" class="avatar avatar-md bradius">
 									</span>
 								</a>
 								<div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow animated">
 									<div class="p-3 text-center border-bottom">
-										<a href="profile-1.html" class="text-center user pb-0 font-weight-bold">John Thomson</a>
-										<p class="text-center user-semi-title">App Developer</p>
+										<a href="profile-1.html" class="text-center user pb-0 font-weight-bold"><?php echo $_SESSION['fname']. " " .$_SESSION['lname'] ?></a>
+										<p class="text-center user-semi-title"><?php echo $_SESSION['designation'] ?></p>
 									</div>
 									<a class="dropdown-item d-flex" href="profile-1.html">
 										<i class="feather feather-user me-3 fs-16 my-auto"></i>
@@ -215,11 +216,11 @@
 <div class="sticky">
 	<aside class="app-sidebar ">
 		<div class="app-sidebar__logo">
-			<a class="header-brand" href="index.html">
-				<img src="<?php echo base_url() ?>assets/images/brand/logo.png" class="header-brand-img desktop-lgo" alt="Dayonelogo">
-				<img src="<?php echo base_url() ?>assets/images/brand/logo-white.png" class="header-brand-img dark-logo" alt="Dayonelogo">
-				<img src="<?php echo base_url() ?>assets/images/brand/favicon.png" class="header-brand-img mobile-logo" alt="Dayonelogo">
-				<img src="<?php echo base_url() ?>assets/images/brand/favicon1.png" class="header-brand-img darkmobile-logo" alt="Dayonelogo">
+			<a class="header-brand" href="<?php echo base_url() ?>">
+				<img src="<?php echo base_url() ?>assets/images/me/favicon_new.png" class="header-brand-img desktop-lgo" alt="Dayonelogo">
+				<img src="<?php echo base_url() ?>assets/images/me/MELogo.png" class="header-brand-img dark-logo" alt="Dayonelogo" style="width:75%">
+				<img src="<?php echo base_url() ?>assets/images/me/favicon_new.png" class="header-brand-img mobile-logo" alt="Dayonelogo">
+				<img src="<?php echo base_url() ?>assets/images/me/favicon_new.png" class="header-brand-img darkmobile-logo" alt="Dayonelogo">
 			</a>
 		</div>
 		<div class="app-sidebar3">
@@ -227,11 +228,11 @@
 				<div class="app-sidebar__user">
 					<div class="dropdown user-pro-body text-center">
 						<div class="user-pic">
-							<img src="<?php echo base_url() ?>assets/images/users/16.jpg" alt="user-img" class="avatar-xxl rounded-circle mb-1">
+							<img src="<?php echo base_url() ?>assets/images/profile/<?php echo $profile ?>" alt="user-img" class="avatar-xxl rounded-circle mb-1">
 						</div>
 						<div class="user-info">
-							<h5 class=" mb-2">Abigali kelly</h5>
-							<span class="text-muted app-sidebar__user-name text-sm">App Developer</span>
+							<h5 class=" mb-2"><?php echo $_SESSION['fname'] . " " . $_SESSION['lname'] ?></h5>
+							<span class="text-muted app-sidebar__user-name text-sm"><?php echo $_SESSION['designation'] ?></span>
 						</div>
 					</div>
 				</div>
@@ -855,3 +856,10 @@
 	</aside>
 </div>
 <!--app-sidebar closed-->
+<script src="<?php echo base_url() ?>assets/plugins/jquery/jquery.min.js"></script>
+
+<script>
+	$(document).ready(function(){
+		$('.open-toggle').click();
+	})
+</script>

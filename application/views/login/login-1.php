@@ -18,10 +18,10 @@
 										<div class="form-group">
 											<div class="input-group mb-4">
 												<div class="input-group">
+													<input class="form-control emp_id" placeholder="Employee ID" name="emp_id" id="emp_id" maxlength="8" autocomplete="off">
 													<a href="" class="input-group-text">
 														<i class="fe fe-mail" aria-hidden="true"></i>
 													</a>
-													<input class="form-control emp_id" placeholder="Employee ID" name="emp_id" id="emp_id" maxlength="8" autocomplete="off">
 												</div>
 												<span class="text-danger error"></span>
 											</div>
@@ -29,10 +29,10 @@
 										<div class="form-group">
 											<div class="input-group mb-4">
 												<div class="input-group" id="Password-toggle">
+													<input class="form-control" type="password" placeholder="Password" name="password" id="password" autocomplete="off">
 													<a href="" class="input-group-text">
 														<i class="fe fe-eye-off" aria-hidden="true"></i>
 													</a>
-													<input class="form-control" type="password" placeholder="Password" name="password" id="password" autocomplete="off">
 												</div>
 											</div>
 										</div>

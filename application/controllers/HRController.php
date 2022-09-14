@@ -7,9 +7,8 @@ class HRController extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->helper('url');
+		// $this->load->helper('url');
 		$this->load->library('session');
-		// print_r($_SESSION);die;
 
 		if (!isset($_SESSION['login'])) {
 			redirect('/');
@@ -19,6 +18,7 @@ class HRController extends CI_Controller
 
 	public function hr_dashboard()
 	{
+		
 		$this->load->view('template/header-script');
 		$this->load->view('template/header');
 		$this->load->view('index/index');
@@ -27,9 +27,11 @@ class HRController extends CI_Controller
 
 	public function hr_department()
 	{
+		$data['depts'] = $this->HR_Model->get_departments();
+		// print_r($data['depts']);die;
 		$this->load->view('template/header-script');
 		$this->load->view('template/header');
-		$this->load->view('hr/hr-department');
+		$this->load->view('hr/hr-department', $data);
 		$this->load->view('template/footer');
 	}
 

@@ -133,6 +133,13 @@ $route['superadmin-role'] 			= 'SuperadminController/superadmin_role';
 $route['auth']	= 'AuthController/auth';
 $route['logout']	= 'AuthController/logout';
 
+// CRUD DEPT
+
+$route['add-dept'] = 'DepartmentController/add_dept';
+$route['delete-dept'] = 'DepartmentController/delete_dept';
+$route['get-dept-by-id'] = 'DepartmentController/get_dept_by_id';
+$route['update-depts'] = 'DepartmentController/update_depts';
+$route['delete-dept'] = 'DepartmentController/delete_dept';
 
 
 $route['default_controller'] = 'AuthController';

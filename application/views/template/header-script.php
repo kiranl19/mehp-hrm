@@ -11,10 +11,10 @@
 	<meta name="keywords" content="admin dashboard, admin panel template, html admin template, dashboard html template, bootstrap 5 dashboard, template admin bootstrap 5 , simple admin panel template, simple dashboard html template,  bootstrap admin panel, task dashboard, job dashboard, bootstrap admin panel, dashboards html, panel in html, bootstrap 5 dashboard, bootstrap 5 dashboard, bootstrap5 dashboard" />
 
 	<!-- Title -->
-	<title>Dayone - Multipurpose Admin & Dashboard Template</title>
+	<title>The Market Expertise</title>
 
 	<!--Favicon -->
-	<link rel="icon" href="<?php echo base_url() ?>assets/images/brand/favicon.ico" type="image/x-icon" />
+	<link rel="icon" href="<?php echo base_url() ?>assets/images/me/favicon_new.png" type="image/x-icon" />
 
 	<!-- Bootstrap css -->
 	<link href="<?php echo base_url() ?>assets/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" id="style" />

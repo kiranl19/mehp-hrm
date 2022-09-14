@@ -28,11 +28,13 @@
 <script src="<?php echo base_url() ?>assets/plugins/sidemenu/sidemenu.js"></script>
 
 <!-- P-scroll js-->
-<script src="<?php echo base_url() ?>assets/plugins/p-scrollbar/p-scrollbar.js"></script>
-<script src="<?php echo base_url() ?>assets/plugins/p-scrollbar/p-scroll1.js"></script>
+<!-- <script src="<?php echo base_url() ?>assets/plugins/p-scrollbar/p-scrollbar.js"></script>
+<script src="<?php echo base_url() ?>assets/plugins/p-scrollbar/p-scroll1.js"></script> -->
 
 <!--Sidebar js-->
-<script src="<?php echo base_url() ?>assets/plugins/sidebar/sidebar.js"></script>
+<!-- <script src="<?php echo base_url() ?>assets/plugins/sidebar/sidebar.js"></script> -->
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <!-- Select2 js -->
 <script src="<?php echo base_url() ?>assets/plugins/select2/select2.full.min.js"></script>
@@ -49,7 +51,15 @@
 <script src="<?php echo base_url() ?>assets/plugins/vertical-scroll/vertical-scroll.js"></script>
 
 
+<script src="<?php echo base_url() ?>assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
+<script src="<?php echo base_url() ?>assets/plugins/datatable/js/dataTables.bootstrap5.js"></script>
+<script src="<?php echo base_url() ?>assets/plugins/datatable/js/dataTables.buttons.min.js"></script>
+<script src="<?php echo base_url() ?>assets/plugins/datatable/js/buttons.bootstrap5.min.js"></script>
+<script src="<?php echo base_url() ?>assets/plugins/datatable/dataTables.responsive.min.js"></script>
+<script src="<?php echo base_url() ?>assets/plugins/datatable/responsive.bootstrap5.min.js"></script>
 
+<script src="<?php echo base_url() ?>assets/plugins/p-scrollbar/p-scrollbar.js"></script>
+<script src="<?php echo base_url() ?>assets/plugins/p-scrollbar/p-scroll1.js"></script>
 
 
 <!-- INTERNAL  Datepicker js -->
@@ -81,3 +91,5 @@
 
 <!-- Custom js-->
 <script src="<?php echo base_url() ?>assets/js/custom.js"></script>
+</body>
+</html>

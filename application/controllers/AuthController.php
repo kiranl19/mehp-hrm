@@ -7,7 +7,7 @@ class AuthController extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->helper('url');
+		// $this->load->helper('url');
 		$this->load->library('session');
 		$this->load->helper('cookie');
 	}
@@ -59,6 +59,8 @@ class AuthController extends CI_Controller
 				'mngr' 		=> $user['mngr'],
 				'emp_id' 	=> $user['emp_id'],
 				'empcode'	=> $user['empcode'],
+				'designation'	=> $user['designation'],
+				'profile'	=> $user['profile'],
 				'login'	=> TRUE,
 			);
 
