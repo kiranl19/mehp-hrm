@@ -856,10 +856,4 @@
 	</aside>
 </div>
 <!--app-sidebar closed-->
-<script src="<?php echo base_url() ?>assets/plugins/jquery/jquery.min.js"></script>
 
-<script>
-	$(document).ready(function(){
-		$('.open-toggle').click();
-	})
-</script>

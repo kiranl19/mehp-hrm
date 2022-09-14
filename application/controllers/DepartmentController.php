@@ -7,9 +7,10 @@ class DepartmentController extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-		// $this->load->helper('url');
-		// $this->load->library('session');
-
+		if (!isset($_SERVER['HTTP_REFERER'])) {
+			redirect(base_url());
+			exit;
+		}
 	}
 
 
@@ -30,7 +31,6 @@ class DepartmentController extends CI_Controller
 		$data['success'] = 'success';
 		$data['dept'] = $dept;
 		echo json_encode($data);
-
 	}
 
 	function update_depts()
@@ -41,7 +41,6 @@ class DepartmentController extends CI_Controller
 			'success' => 'success',
 			'dept_name' => ucwords($_POST['dept_name'])
 		));
-
 	}
 
 	function delete_dept()
@@ -52,7 +51,5 @@ class DepartmentController extends CI_Controller
 			'success' => 'success',
 			// 'dept_name' => ucwords($_POST['dept_name'])
 		));
-
 	}
-
 }
