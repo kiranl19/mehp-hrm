@@ -45,11 +45,13 @@ class DepartmentController extends CI_Controller
 
 	function delete_dept()
 	{
-		$this->Department_Model->delete_dept($_POST['dept_id']);
+		$dept = $this->Department_Model->delete_dept($_POST['dept_id']);
 
-		echo json_encode(array(
-			'success' => 'success',
-			// 'dept_name' => ucwords($_POST['dept_name'])
-		));
+		if ($dept == true) {
+			echo json_encode(array(
+				'success' => 'success',
+				// 'dept_name' => ucwords($_POST['dept_name'])
+			));
+		}
 	}
 }

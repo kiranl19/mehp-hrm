@@ -73,6 +73,8 @@ $route['hr-addpayroll'] 		= 'HRController/hr_addpayroll';
 $route['hr-editpayroll'] 		= 'HRController/hr_editpayroll';
 $route['hr-events'] 			= 'HRController/hr_events';
 $route['hr-settings'] 			= 'HRController/hr_settings';
+$route['hr-job-title'] 			= 'HRController/hr_job_title';
+$route['hr-education-level'] 	= 'HRController/hr_education_level';
 
 // Employee Dashboard
 $route['employee-dashboard'] 	= 'EmployeeController/employee_dashboard';
@@ -130,16 +132,33 @@ $route['superadmin-role'] 			= 'SuperadminController/superadmin_role';
 
 // Authentication
 // $route['login']	= 'HRController/login';
-$route['auth']	= 'AuthController/auth';
+$route['auth']		= 'AuthController/auth';
 $route['logout']	= 'AuthController/logout';
 
 // CRUD DEPT
-
-$route['add-dept'] = 'DepartmentController/add_dept';
-$route['delete-dept'] = 'DepartmentController/delete_dept';
+$route['add-dept'] 		 = 'DepartmentController/add_dept';
+$route['delete-dept'] 	 = 'DepartmentController/delete_dept';
 $route['get-dept-by-id'] = 'DepartmentController/get_dept_by_id';
-$route['update-depts'] = 'DepartmentController/update_depts';
-$route['delete-dept'] = 'DepartmentController/delete_dept';
+$route['update-depts'] 	 = 'DepartmentController/update_depts';
+// $route['delete-dept'] 	 = 'DepartmentController/delete_dept';
+
+// CRUD Job Titles
+$route['add-jt'] 		= 'HRController/add_jt';
+$route['delete-jt'] 	= 'HRController/delete_jt';
+$route['get-jt-by-id'] 	= 'HRController/get_jt_by_id';
+$route['update-jt'] 	= 'HRController/update_jt';
+
+
+// CRUD Education Level
+$route['add-edl'] 		= 'HRController/add_edl';
+$route['delete-edl'] 	= 'HRController/delete_edl';
+$route['get-edl-by-id'] = 'HRController/get_edl_by_id';
+$route['update-edl'] 	= 'HRController/update_edl';
+
+// CRUD Employee
+$route['ajax-add-employee'] = 'EmployeeController/ajax_add_employee';
+$route['upload-docs'] 		= 'EmployeeController/upload_docs';
+
 
 
 $route['default_controller'] = 'AuthController';

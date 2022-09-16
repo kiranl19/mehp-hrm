@@ -163,3 +163,201 @@
 
 	</div>
 </div><!-- end app-content-->
+
+<!-- Add New Job Modal -->
+<div class="modal fade" id="addjobmodal">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Add New Job</h5>
+				<button class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">×</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<div class="row">
+						<div class="col-md-3">
+							<label class="form-label mb-0 mt-2">Position</label>
+						</div>
+						<div class="col-md-9">
+							<input type="text" class="form-control" placeholder="Name" value="">
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-md-3">
+							<label class="form-label mb-0 mt-2">Job Type</label>
+						</div>
+						<div class="col-md-9">
+							<select name="attendance" class="form-control custom-select select2" data-placeholder="Select Job Type">
+								<option label="Select Job Type"></option>
+								<option value="1">Full-Time</option>
+								<option value="2">Part-Time</option>
+								<option value="3">Freelancer</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-md-3">
+							<label class="form-label mb-0 mt-2">Description</label>
+						</div>
+						<div class="col-md-9">
+							<div class="summernote"></div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-md-3">
+							<label class="form-label mb-0 mt-2">Posted Date</label>
+						</div>
+						<div class="col-md-9">
+							<div class="input-group">
+								<input class="form-control fc-datepicker" placeholder="DD-MM-YYY" type="text">
+								<div class="input-group-append">
+									<div class="input-group-text">
+										<i class="feather feather-calendar"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-md-3">
+							<label class="form-label mb-0 mt-2">Last Date To Apply</label>
+						</div>
+						<div class="col-md-9">
+							<div class="input-group">
+								<input class="form-control fc-datepicker" placeholder="DD-MM-YYY" type="text">
+								<div class="input-group-append">
+									<div class="input-group-text">
+										<i class="feather feather-calendar"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-md-3">
+							<label class="form-label mb-0 mt-2">Close Date</label>
+						</div>
+						<div class="col-md-9">
+							<div class="input-group">
+								<input class="form-control fc-datepicker" placeholder="DD-MM-YYY" type="text">
+								<div class="input-group-append">
+									<div class="input-group-text">
+										<i class="feather feather-calendar"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3">
+						<label class="form-label mb-0 mt-1">Status</label>
+					</div>
+					<div class="col-md-9">
+						<div class="custom-controls-stacked d-md-flex">
+							<label class="custom-control custom-radio success me-4">
+								<input type="radio" class="custom-control-input" name="example-radios1" value="option1">
+								<span class="custom-control-label">Active</span>
+							</label>
+							<label class="custom-control custom-radio success me-4">
+								<input type="radio" class="custom-control-input" name="example-radios1" value="option2">
+								<span class="custom-control-label">InActive</span>
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-outline-primary" data-bs-dismiss="modal">Close</button>
+				<button class="btn btn-success" onclick="not1()">Submit</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Add New Job Modal -->
+
+<!-- Apply Job Modal -->
+<div class="modal fade" id="apply">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Apply Job</h5>
+				<button class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">×</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<div class="row">
+						<div class="col-md-3">
+							<label class="form-label mb-0 mt-2">Name</label>
+						</div>
+						<div class="col-md-9">
+							<input type="text" class="form-control" placeholder="Name" value="">
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-md-3">
+							<label class="form-label mb-0 mt-2">Email</label>
+						</div>
+						<div class="col-md-9">
+							<input type="text" class="form-control" placeholder="Email" value="">
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-md-3">
+							<label class="form-label mb-0 mt-2">Contact Number</label>
+						</div>
+						<div class="col-md-9">
+							<input type="text" class="form-control" placeholder="Phone Number" value="">
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-md-3">
+							<label class="form-label mb-0 mt-2">Description</label>
+						</div>
+						<div class="col-md-9">
+							<div class="summernote"></div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-md-3">
+							<label class="form-label mb-0 mt-2">Upload Resume</label>
+						</div>
+						<div class="col-md-9">
+							<div class="form-group">
+								<label for="form-label" class="form-label"></label>
+								<input class="form-control" type="file">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-outline-primary" data-bs-dismiss="modal">Close</button>
+				<button class="btn btn-success" onclick="not1()">Apply</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Apply Job Modal-->

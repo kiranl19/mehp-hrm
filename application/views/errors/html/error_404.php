@@ -13,8 +13,7 @@
 		<title>Dayone - Multipurpose Admin & Dashboard Template</title>
 
 		<!--Favicon -->
-		<link rel="icon" href="<?php echo config_item('base_url'); ?>assets/images/brand/favicon.ico" type="image/x-icon"/>
-
+		<link rel="icon" href="<?php echo config_item('base_url'); ?>assets/images/me/favicon_new.png" type="image/x-icon" />
 		<!-- Bootstrap css -->
 		<link href="<?php echo config_item('base_url'); ?>assets/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" id="style"/>
 
@@ -38,7 +37,7 @@
 					<div class="display-1 text-primary mb-5 font-weight-bold">4<span class="fa fa-smile-o"></span>4</div>
 					<h1 class="h3  mb-3 font-weight-semibold">Sorry, an error has occured, Requested Page not found!</h1>
 					<p class="h5 font-weight-normal mb-7 leading-normal">You may have mistyped the address or the page may have moved.</p>
-					<a class="btn btn-primary" href="index.html"><i class="fe fe-arrow-left-circle me-1"></i>Back to Home</a>
+					<a class="btn btn-primary" href="<?php echo config_item('base_url'); ?>"><i class="fe fe-arrow-left-circle me-1"></i>Back to Home</a>
 				</div>
 			</div>
 		</div>

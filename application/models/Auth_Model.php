@@ -29,7 +29,7 @@ class Auth_Model extends CI_Model
 			return 0;
 		}
 	}
-
+/* 
 	function is_logged_in()
 	{
 		if (isset($_SESSION['login'])){
@@ -40,5 +40,5 @@ class Auth_Model extends CI_Model
 
 		}
 		// if (isset($_SESSION))
-	}
+	} */
 }

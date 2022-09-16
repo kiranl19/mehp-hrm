@@ -254,6 +254,8 @@
 								<ul class="sub-slide-menu">
 									<li><a href="hr-dashboard" class="sub-slide-item">Dashboard</a></li>
 									<li><a href="hr-department" class="sub-slide-item">Department</a></li>
+									<li><a href="hr-job-title" class="sub-slide-item">Job Titles</a></li>
+									<li><a href="hr-education-level" class="sub-slide-item">Education Level</a></li>
 									<li class="sub-slide2">
 										<a class="sub-side-menu__item2" data-bs-toggle="sub-slide2" href="javascript:void(0);"><span class="sub-side-menu__label">Employees</span><i class="sub-angle2 fa fa-angle-right"></i></a>
 										<ul class="sub-slide-menu2">
@@ -856,4 +858,10 @@
 	</aside>
 </div>
 <!--app-sidebar closed-->
+<script src="<?php echo base_url() ?>assets/plugins/jquery/jquery.min.js"></script>
 
+<script>
+	$(document).ready(function(){
+		$('.open-toggle').click();
+	})
+</script>

@@ -15,6 +15,7 @@ class AuthController extends CI_Controller
 	public function index()
 	{
 		if (isset($_SESSION['login']) && $_SESSION['login'] == TRUE) {
+			// die('1');
 			redirect('hr-dashboard');
 		} else {
 
@@ -30,7 +31,7 @@ class AuthController extends CI_Controller
 
 		$user = $this->Auth_Model->auth($emp_id, $password);
 
-		$autoLogin = $this->input->post("autologin", true);
+		/* $autoLogin = $this->input->post("autologin", true);
 
 		if ($autoLogin == 1) {
 			$cookie = array(
@@ -42,7 +43,7 @@ class AuthController extends CI_Controller
 			$this->input->set_cookie($cookie);
 		} else {
 			delete_cookie("autologin");
-		}
+		} */
 		// die;
 
 		// print_r($user);die;

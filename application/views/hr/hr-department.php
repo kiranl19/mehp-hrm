@@ -24,7 +24,7 @@
 			<div class="col-xl-12 col-md-12 col-lg-12">
 				<div class="card">
 					<div class="card-header  border-0">
-						<h4 class="card-title">Department Summary</h4>
+						<h4 class="card-title">Department Summary <?php $GLOBALS = $this->errors; //echo $GLOBALS[E_WARNING] ?></h4>
 					</div>
 					<div class="card-body">
 						<div class="table-responsive">
