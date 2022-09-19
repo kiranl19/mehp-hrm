@@ -178,7 +178,7 @@
 								</a>
 								<div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow animated">
 									<div class="p-3 text-center border-bottom">
-										<a href="profile-1.html" class="text-center user pb-0 font-weight-bold"><?php echo $_SESSION['fname']. " " .$_SESSION['lname'] ?></a>
+										<a href="profile-1.html" class="text-center user pb-0 font-weight-bold"><?php echo $_SESSION['fname'] . " " . $_SESSION['lname'] ?></a>
 										<p class="text-center user-semi-title"><?php echo $_SESSION['designation'] ?></p>
 									</div>
 									<a class="dropdown-item d-flex" href="profile-1.html">
@@ -253,9 +253,23 @@
 								</a>
 								<ul class="sub-slide-menu">
 									<li><a href="hr-dashboard" class="sub-slide-item">Dashboard</a></li>
-									<li><a href="hr-department" class="sub-slide-item">Department</a></li>
+									<!-- <li><a href="hr-department" class="sub-slide-item"></a></li> -->
+
+
+									<li class="sub-slide2">
+										<a class="sub-side-menu__item2" data-bs-toggle="sub-slide2" href="javascript:void(0);"><span class="sub-side-menu__label">Department</span><i class="sub-angle2 fa fa-angle-right"></i></a>
+										<ul class="sub-slide-menu2">
+											<li><a class="sub-slide-item2" href="hr-department">Department</a></li>
+											<li><a class="sub-slide-item2" href="hr-department-type">Department Type</a></li>
+											<!-- <li><a class="sub-slide-item2" href="hr-addemployee">Add Employee</a></li> -->
+										</ul>
+									</li>
+
+
+
 									<li><a href="hr-job-title" class="sub-slide-item">Job Titles</a></li>
 									<li><a href="hr-education-level" class="sub-slide-item">Education Level</a></li>
+									<li><a href="hr-address-types" class="sub-slide-item">Address Types</a></li>
 									<li class="sub-slide2">
 										<a class="sub-side-menu__item2" data-bs-toggle="sub-slide2" href="javascript:void(0);"><span class="sub-side-menu__label">Employees</span><i class="sub-angle2 fa fa-angle-right"></i></a>
 										<ul class="sub-slide-menu2">
@@ -861,7 +875,7 @@
 <script src="<?php echo base_url() ?>assets/plugins/jquery/jquery.min.js"></script>
 
 <script>
-	$(document).ready(function(){
+	$(document).ready(function() {
 		$('.open-toggle').click();
 	})
 </script>

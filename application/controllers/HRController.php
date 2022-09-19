@@ -8,7 +8,7 @@ class HRController extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-		
+
 		$this->errors = $this->errors->global();
 		/* if (!isset($_SERVER['HTTP_REFERER'])) {
 			redirect(base_url());
@@ -19,12 +19,12 @@ class HRController extends CI_Controller
 			redirect('/');
 		}
 	}
-	
+
 
 	public function hr_dashboard()
 	{
-		// print_r($this->errors[E_ERROR]);die;
-		
+		// print_r(test);/* die; */
+
 		$this->load->view('template/header-script');
 		$this->load->view('template/header');
 		$this->load->view('index/index');
@@ -34,8 +34,9 @@ class HRController extends CI_Controller
 	public function hr_department()
 	{
 		$data['depts'] = $this->HR_Model->get_departments();
+		$data['deptTypes'] = $this->HR_Model->get_dept_types();
 		// print_r($data['depts']);die;
-		$data['lib'] = $this->errors;
+		// $data['lib'] = $this->errors;
 		$this->load->view('template/header-script');
 		$this->load->view('template/header');
 		$this->load->view('hr/hr-department', $data);
@@ -61,6 +62,8 @@ class HRController extends CI_Controller
 	public function hr_addemployee()
 	{
 		$data['gender'] = $this->HR_Model->get_gender();
+		$data['addTypes'] = $this->HR_Model->get_add_type();
+		$data['depts'] = $this->HR_Model->get_departments();
 		$this->load->view('template/header-script');
 		$this->load->view('template/header');
 		$this->load->view('hr/hr-addemployee', $data);
@@ -215,11 +218,28 @@ class HRController extends CI_Controller
 
 	public function hr_settings()
 	{
-		/* $error =  $this->errors->error();
-		print_r($error[E_ERROR]); */
 		$this->load->view('template/header-script');
 		$this->load->view('template/header');
 		$this->load->view('hr/hr-settings');
+		$this->load->view('template/footer');
+	}
+
+	public function hr_address_types()
+	{
+		$data['addTypes'] = $this->HR_Model->get_add_type();
+		$this->load->view('template/header-script');
+		$this->load->view('template/header');
+		$this->load->view('hr/hr-address-types', $data);
+		$this->load->view('template/footer');
+	}
+
+
+	public function hr_department_types()
+	{
+		$data['deptTypes'] = $this->HR_Model->get_dept_type();
+		$this->load->view('template/header-script');
+		$this->load->view('template/header');
+		$this->load->view('hr/hr-department-types', $data);
 		$this->load->view('template/footer');
 	}
 
@@ -240,7 +260,6 @@ class HRController extends CI_Controller
 		if ($jt == true) {
 			echo json_encode(array(
 				'success' => 'success',
-				// 'dept_name' => ucwords($_POST['dept_name'])
 			));
 		}
 	}
@@ -303,4 +322,43 @@ class HRController extends CI_Controller
 		));
 	}
 
+	function add_address_type()
+	{
+		$addType = $this->HR_Model->add_address_type($_POST);
+
+		echo json_encode(array(
+			'success' => 'success',
+			'add_type' => ucwords($_POST['add_type']), 'adty_id' => $addType
+		));
+	}
+
+	function get_address_type_by_id()
+	{
+		$addType = $this->HR_Model->get_address_type_by_id($_POST['adty_id']);
+
+		$data['success'] = 'success';
+		$data['add_type'] = $addType;
+		echo json_encode($data);
+	}
+
+	function update_address_type()
+	{
+		$this->HR_Model->update_address_type($_POST);
+
+		echo json_encode(array(
+			'success' => 'success',
+			'add_type' => ucwords($_POST['add_type'])
+		));
+	}
+
+	function delete_address_type()
+	{
+		$addType = $this->HR_Model->delete_address_type($_POST['adty_id']);
+
+		if ($addType == true) {
+			echo json_encode(array(
+				'success' => 'success',
+			));
+		}
+	}
 }
