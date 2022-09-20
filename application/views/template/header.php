@@ -299,12 +299,12 @@
 								</a>
 								<ul class="sub-slide-menu">
 
-									<li><a href="'employee-dashboard'" class="sub-slide-item">Dashboard</a></li>
-									<li><a href="'employee-attendance'" class="sub-slide-item">Attendance</a></li>
-									<li><a href="'employee-leaves'" class="sub-slide-item">Apply Leaves </a></li>
-									<li><a href="'employee-myleaves'" class="sub-slide-item">My Leaves </a></li>
-									<li><a href="'employee-payslips'" class="sub-slide-item">Payslips </a></li>
-									<li><a href="'employee-expenses'" class="sub-slide-item">Expenses</a></li>
+									<li><a href="employee-dashboard" class="sub-slide-item">Dashboard</a></li>
+									<li><a href="employee-attendance" class="sub-slide-item">Attendance</a></li>
+									<li><a href="employee-leaves" class="sub-slide-item">Apply Leaves </a></li>
+									<li><a href="employee-myleaves" class="sub-slide-item">My Leaves </a></li>
+									<li><a href="employee-payslips" class="sub-slide-item">Payslips </a></li>
+									<li><a href="employee-expenses" class="sub-slide-item">Expenses</a></li>
 								</ul>
 							</li>
 							<li class="sub-slide">
