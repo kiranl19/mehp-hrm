@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
@@ -75,6 +75,8 @@ $route['hr-events'] 			= 'HRController/hr_events';
 $route['hr-settings'] 			= 'HRController/hr_settings';
 $route['hr-job-title'] 			= 'HRController/hr_job_title';
 $route['hr-education-level'] 	= 'HRController/hr_education_level';
+$route['hr-address-types'] 		= 'HRController/hr_address_types';
+$route['hr-department-type'] 	= 'HRController/hr_department_types';
 
 // Employee Dashboard
 $route['employee-dashboard'] 	= 'EmployeeController/employee_dashboard';
@@ -140,7 +142,12 @@ $route['add-dept'] 		 = 'DepartmentController/add_dept';
 $route['delete-dept'] 	 = 'DepartmentController/delete_dept';
 $route['get-dept-by-id'] = 'DepartmentController/get_dept_by_id';
 $route['update-depts'] 	 = 'DepartmentController/update_depts';
-// $route['delete-dept'] 	 = 'DepartmentController/delete_dept';
+
+// CRUD DEPT Type
+$route['add-dept-type'] 		= 'DepartmentController/add_dept_type';
+$route['delete-dept-type'] 		= 'DepartmentController/delete_dept_type';
+$route['get-dept-type-by-id'] 	= 'DepartmentController/get_dept_type_by_id';
+$route['update-dept-type'] 	 	= 'DepartmentController/update_dept_type';
 
 // CRUD Job Titles
 $route['add-jt'] 		= 'HRController/add_jt';
@@ -155,8 +162,17 @@ $route['delete-edl'] 	= 'HRController/delete_edl';
 $route['get-edl-by-id'] = 'HRController/get_edl_by_id';
 $route['update-edl'] 	= 'HRController/update_edl';
 
+
+// CRUD Education Level
+$route['add-address-type'] 		= 'HRController/add_address_type';
+$route['get-address-type-by-id'] = 'HRController/get_address_type_by_id';
+$route['update-address-type'] 	= 'HRController/update_address_type';
+$route['delete-address-type'] 	= 'HRController/delete_address_type';
+
 // CRUD Employee
 $route['ajax-add-employee'] = 'EmployeeController/ajax_add_employee';
+$route['ajax-add-employee-profile'] = 'EmployeeController/ajax_add_employee_profile';
+$route['ajax-add-employee-address'] = 'EmployeeController/ajax_add_employee_address';
 $route['upload-docs'] 		= 'EmployeeController/upload_docs';
 
 

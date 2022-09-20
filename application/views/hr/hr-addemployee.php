@@ -164,8 +164,18 @@
 											</div>
 										</div>
 									</div>
-									
 
+
+									<div class="form-group">
+										<div class="row">
+											<div class="col-md-3">
+												<label class="form-label mb-0 mt-2">Date Of Birth</label>
+											</div>
+											<div class="col-md-9">
+												<input type="date" name="dob" id="dob1" class="form-control" placeholder="DD-MM-YYY">
+											</div>
+										</div>
+									</div>
 									<div class="form-group">
 										<div class="row">
 											<div class="col-md-3">
@@ -255,8 +265,8 @@
 											</div>
 										</div>
 									</div>
-									
-									
+
+
 									<div class="form-group ">
 										<div class="row">
 											<div class="col-md-3">
@@ -357,8 +367,8 @@
 											<div class="col-md-4">
 												<select name="is_indian" id="is_indian" class="form-control custom-select select2" data-placeholder="Select Group">
 													<option label="Select"></option>
-													<option value="Yes">Yes</option>
-													<option value="No">No</option>
+													<option value="1">Yes</option>
+													<option value="0">No</option>
 												</select>
 											</div>
 											<div class="col-md-2">
@@ -369,7 +379,7 @@
 											</div>
 										</div>
 									</div>
-									
+
 									<div class="form-group">
 										<div class="row">
 											<div class="col-md-2">
@@ -378,9 +388,9 @@
 											<div class="col-md-4">
 												<select name="m_status" id="m_status" class="form-control custom-select select2" data-placeholder="Select">
 													<option label="Select"></option>
-													<option value="Single">Single</option>
-													<option value="Married">Married</option>
-													<option value="Divorced">Divorced</option>
+													<option value="1">Single</option>
+													<option value="2">Married</option>
+													<option value="3">Divorced</option>
 												</select>
 											</div>
 											<div class="col-md-2">
@@ -400,8 +410,8 @@
 											<div class="col-md-4">
 												<select name="phy_challenged" id="phy_challenged" class="form-control custom-select select2" data-placeholder="Select">
 													<option label="Select"></option>
-													<option value="Yes">Yes</option>
-													<option value="No">No</option>
+													<option value="1">Yes</option>
+													<option value="0">No</option>
 												</select>
 											</div>
 
@@ -414,7 +424,7 @@
 
 										</div>
 									</div>
-									
+
 									<div class="form-group">
 										<div class="row">
 											<div class="col-md-2">
@@ -431,6 +441,10 @@
 											</div>
 										</div>
 									</div>
+									<div class="form-group text-end">
+										<input type="button" class="btn btn-danger w-15" value="Clear">
+										<input type="submit" class="btn btn-primary w-15" value="Submit">
+									</div>
 								</form>
 							</div>
 						</div>
@@ -445,6 +459,51 @@
 											</div>
 											<div class="col-md-9">
 												<input type="text" class="form-control" placeholder="Employee Id" name="emp_id5" id="emp_id5" value="">
+											</div>
+
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-md-3">
+												<label class="form-label mb-0 mt-2">User Name</label>
+											</div>
+											<div class="col-md-9">
+												<div class="row">
+													<div class="col-sm-6">
+														<input type="text" class="form-control" placeholder="First Name" name="add_fname" id="add_fname" value="">
+													</div>
+													<div class="col-sm-6">
+														<input type="text" class="form-control" placeholder="Last Name" name="add_lname" id="add_lname" value="">
+													</div>
+												</div>
+											</div>
+
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-md-3">
+												<label class="form-label mb-0 mt-2">Email</label>
+											</div>
+											<div class="col-md-9">
+												<input type="text" class="form-control" placeholder="Email" name="email" id="email" value="">
+											</div>
+
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-md-3">
+												<label class="form-label mb-0 mt-2">Address Type</label>
+											</div>
+											<div class="col-md-9">
+												<select name="add_type" id="add_type" class="form-control custom-select select2" data-placeholder="Select Type">
+													<option label="Select Type"></option>
+													<?php foreach ($addTypes as $addType) : ?>
+														<option value="<?php echo $addType['adty_id'] ?>"><?php echo $addType['add_type'] ?></option>
+													<?php endforeach; ?>
+												</select>
 											</div>
 
 										</div>
@@ -546,7 +605,12 @@
 												<label class="form-label mb-0 mt-2">Department</label>
 											</div>
 											<div class="col-md-9">
-												<input type="text" name="dept" id="dept" class="form-control" placeholder="Department">
+												<select name="dept" id="dept" class="form-control custom-select select2" data-placeholder="Select Type">
+													<option label="Select Type"></option>
+													<?php foreach ($depts as $dept) : ?>
+														<option value="<?php echo $dept['d_id'] ?>"><?php echo $dept['dept_name'] ?></option>
+													<?php endforeach; ?>
+												</select>
 											</div>
 										</div>
 									</div>
@@ -893,11 +957,42 @@
 			var val = $(this).val();
 			var pass = capitalizeFirstLetter(val);
 
+			$('#add_fname').val(val);
+
 			pass = pass.replace(/ /g, '')
 			$("#password").val(pass + "@123");
 		})
+
+		$('#lname').on('keyup', function() {
+			var val = $(this).val();
+			$('#add_lname').val(val);
+
+		})
 	})
 
+	$(function() {
+		$('#emp_id').on('change', function() {
+			var emp_id = $(this).val();
+			$('#emp_id2').val(emp_id);
+			$('#emp_id3').val(emp_id);
+			$('#emp_id4').val(emp_id);
+			$('#emp_id5').val(emp_id);
+			$('#emp_id6').val(emp_id);
+		})
+	})
+
+	$(function() {
+		$('#dob1').on('change', function() {
+			var dob = $(this).val();
+			// alert(dob);
+			$('#dob').val(dob);
+			/* $('#emp_id2').val(emp_id);
+			$('#emp_id3').val(emp_id);
+			$('#emp_id4').val(emp_id);
+			$('#emp_id5').val(emp_id);
+			$('#emp_id6').val(emp_id); */
+		})
+	})
 	$(function() {
 		$('#emp_id').on('change', function() {
 			var emp_id = $(this).val();
@@ -970,6 +1065,88 @@
 
 		});
 
+
+
+		$('#profile_details').on('submit', function(e) {
+			e.preventDefault();
+
+			var form_data = $(this).serialize();
+			console.log(form_data);
+
+			$.ajax({
+				url: 'ajax-add-employee-profile',
+				type: 'POST',
+				data: form_data,
+				enctype: 'multipart/form-data',
+				success: function(msg) {
+					console.log(msg);
+					if (msg.success == 'success') {
+
+						Swal.fire({
+							title: '<h6 class="text-success"><b>Employee Details Saved Successfully</b></h6>',
+							icon: 'success'
+						})
+
+						activaTab('tab10');
+						$('#back-to-top').click();
+					} else if (msg.error == 'error') {
+						Swal.fire({
+							title: '<h6 class="text-danger"><b>Employee ID Already Exists</b></h6>',
+							icon: 'info'
+						})
+					}
+				},
+				error: function(error) {
+					Swal.fire({
+						title: '<h6 class="text-danger"><b>Please Fill all fields..!</b></h6>',
+						icon: 'info'
+					})
+				}
+			})
+
+		});
+
+
+
+		$('#address_details').on('submit', function(e) {
+			e.preventDefault();
+
+			var form_data = $(this).serialize();
+			console.log(form_data);
+
+			$.ajax({
+				url: 'ajax-add-employee-address',
+				type: 'POST',
+				data: form_data,
+				enctype: 'multipart/form-data',
+				success: function(msg) {
+					console.log(msg);
+					if (msg.success == 'success') {
+
+						Swal.fire({
+							title: '<h6 class="text-success"><b>Employee Details Saved Successfully</b></h6>',
+							icon: 'success'
+						})
+
+						activaTab('tab10');
+						$('#back-to-top').click();
+					} else if (msg.error == 'error') {
+						Swal.fire({
+							title: '<h6 class="text-danger"><b>Employee ID Already Exists</b></h6>',
+							icon: 'info'
+						})
+					}
+				},
+				error: function(error) {
+					Swal.fire({
+						title: '<h6 class="text-danger"><b>Please Fill all fields..!</b></h6>',
+						icon: 'info'
+					})
+				}
+			})
+
+		});
+
 		$('#comp_details').on('submit', function(e) {
 			e.preventDefault();
 			activaTab('tab7');
@@ -994,7 +1171,7 @@
 				type: 'POST',
 				dataType: 'JSON',
 				data: data,
-				success:function(resp){
+				success: function(resp) {
 					console.log(resp);
 
 				}

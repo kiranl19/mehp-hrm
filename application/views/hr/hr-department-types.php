@@ -4,12 +4,12 @@
 		<!--Page header-->
 		<div class="page-header d-xl-flex d-block">
 			<div class="page-leftheader">
-				<div class="page-title">Job Title</div>
+				<div class="page-title">Department Type</div>
 			</div>
 			<div class="page-rightheader ms-md-auto">
 				<div class="align-items-end flex-wrap my-auto right-content breadcrumb-right">
 					<div class="btn-list">
-						<a href="javascript:void(0);" class="btn btn-primary me-3" data-bs-toggle="modal" data-bs-target="#adddepartmentmodal">Add Job Title</a>
+						<a href="javascript:void(0);" class="btn btn-primary me-3" data-bs-toggle="modal" data-bs-target="#adddepartmentmodal">Add Department Type</a>
 						<button class="btn btn-light" data-bs-toggle="tooltip" data-bs-placement="top" title="E-mail"> <i class="feather feather-mail"></i> </button>
 						<button class="btn btn-light" data-bs-placement="top" data-bs-toggle="tooltip" title="Contact"> <i class="feather feather-phone-call"></i> </button>
 						<button class="btn btn-primary" data-bs-placement="top" data-bs-toggle="tooltip" title="Info"> <i class="feather feather-info"></i> </button>
@@ -24,7 +24,8 @@
 			<div class="col-xl-12 col-md-12 col-lg-12">
 				<div class="card">
 					<div class="card-header  border-0">
-						<h4 class="card-title">Job Title Summary</h4>
+						<h4 class="card-title">Department Type Summary <?php $GLOBALS = $this->errors; //echo $GLOBALS[E_WARNING] 
+																		?></h4>
 					</div>
 					<div class="card-body">
 						<div class="table-responsive">
@@ -32,24 +33,26 @@
 								<thead>
 									<tr>
 										<th class="border-bottom-0">ID</th>
-										<th class="border-bottom-0">Job Title</th>
+										<th class="border-bottom-0">Department Type Name</th>
+										<th class="border-bottom-0">Tier</th>
 										<th class="border-bottom-0">Edit</th>
 										<th class="border-bottom-0">Delete</th>
 									</tr>
 								</thead>
 								<tbody>
 									<?php $sr = 1;
-									foreach ($jts as $jt) { ?>
-										<tr id="id_<?php echo $jt['jtid'] ?>" class="serial">
+									foreach ($deptTypes as $deptType) { ?>
+										<tr id="id_<?php echo $deptType['dt_id'] ?>" class="serial">
 											<td><?php echo $sr++ ?></td>
-											<td id="jt_<?php echo $jt['jtid'] ?>"><?php echo $jt['job_title'] ?></td>
+											<td id="dept_<?php echo $deptType['dt_id'] ?>"><?php echo $deptType['dept_type'] ?></td>
+											<td id="tier_<?php echo $deptType['dt_id'] ?>"><?php echo $deptType['tier'] ?></td>
 											<td>
-												<a class="btn btn-primary btn-icon btn-sm edit_dept" data-id="<?php echo $jt['jtid'] ?>" data-bs-toggle="modal" data-bs-target="#editdepartmentmodal">
+												<a class="btn btn-primary btn-icon btn-sm edit_dept" data-id="<?php echo $deptType['dt_id'] ?>" data-bs-toggle="modal" data-bs-target="#editdepartmentmodal">
 													<i class="feather feather-edit" data-bs-toggle="tooltip" data-original-title="Edit"></i>
 												</a>
 											</td>
 											<td>
-												<a class="btn btn-danger btn-icon btn-sm delete_dept" data-bs-toggle="tooltip" data-original-title="Delete" data-id="<?php echo $jt['jtid'] ?>"><i class="feather feather-trash-2"></i></a>
+												<a class="btn btn-danger btn-icon btn-sm delete_dept" data-bs-toggle="tooltip" data-original-title="Delete" data-id="<?php echo $deptType['dt_id'] ?>"><i class="feather feather-trash-2"></i></a>
 											</td>
 										</tr>
 									<?php } ?>
@@ -69,7 +72,7 @@
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title">Add Job Title</h5>
+				<h5 class="modal-title">Add Department Type</h5>
 				<button class="btn-close" data-bs-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">×</span>
 				</button>
@@ -78,8 +81,12 @@
 				<div class="modal-body">
 
 					<div class="form-group">
-						<label class="form-label">Add Job Title</label>
-						<input type="text" class="form-control" placeholder="Job Title" name="jt_name" id="jt_name" value="">
+						<label class="form-label">Add Department Type</label>
+						<input type="text" class="form-control" placeholder="Department Type" name="dept_type" id="dept_type" value="">
+					</div>
+					<div class="form-group">
+						<label class="form-label">Tier</label>
+						<input type="text" class="form-control" placeholder="Tier" name="tier" id="tier" value="">
 					</div>
 				</div>
 				<div class="modal-footer">
@@ -90,24 +97,28 @@
 		</div>
 	</div>
 </div>
-<!-- End Add Job Title Modal  -->
+<!-- End Add Department Type Modal  -->
 
-<!--Edit Job Title Modal -->
+<!--Edit Department Type Modal -->
 <div class="modal fade" id="editdepartmentmodal">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title">Edit Job Title</h5>
+				<h5 class="modal-title">Edit Department Type</h5>
 				<button class="btn-close" data-bs-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">x</span>
 				</button>
 			</div>
-			<form id="up_jt_form">
+			<form id="up_dept_form">
 				<div class="modal-body">
 					<div class="form-group">
-						<label class="form-label">Edit Job Title</label>
-						<input type="hidden" class="form-control" name="jtid" id="up_jt_id" value="">
-						<input type="text" class="form-control" name="jt_name" id="up_jt_name" placeholder="Job Title" value="">
+						<label class="form-label">Edit Department Type</label>
+						<input type="hidden" class="form-control" name="dt_id" id="up_dt_id" value="">
+						<input type="text" class="form-control" name="dept_type" id="up_dept_name" placeholder="Department Type" value="">
+					</div>
+					<div class="form-group">
+						<label class="form-label">Tier</label>
+						<input type="text" class="form-control" name="tier" id="up_tier" placeholder="Tier" value="">
 					</div>
 				</div>
 				<div class="modal-footer">
@@ -118,7 +129,7 @@
 		</div>
 	</div>
 </div>
-<!-- End Edit Job Title Modal  -->
+<!-- End Edit Department Type Modal  -->
 
 <!-- INTERNAL Data tables -->
 <script src="<?php echo base_url() ?>assets/plugins/jquery/jquery.min.js"></script>
@@ -128,18 +139,19 @@
 <script type="text/javascript">
 	$(function() {
 		$('#dept_form').submit(function(e) {
-			// alert();
 			e.preventDefault();
 			var form_data = $(this).serialize();
+			// alert(form_data);
 			var tbody = $('#hr-table').children('tbody');
 			var table = tbody.length ? tbody : $('#hr-table');
+			// console.log(serial.recordsTotal);
 			var table = $('#hr-table').DataTable();
 			var serial1 = table.page.info();
 			var serial = serial1.recordsTotal;
 			serial = serial + 1;
 			console.log(serial);
 			$.ajax({
-				url: 'add-jt',
+				url: 'add-dept-type',
 				type: 'POST',
 				dataType: 'json',
 				data: form_data,
@@ -147,19 +159,19 @@
 
 					if (msg.success == 'success') {
 						Swal.fire({
-							title: '<h6 class="text-success"><b>Job Title Added Successfully</b></h6>',
+							title: '<h6 class="text-success"><b>Department Type Added Successfully</b></h6>',
 							icon: 'success'
 						})
 						var row = $('.table-vcenter').DataTable().row.add([
-							serial, msg.jt_name, '<a class="btn btn-primary btn-icon btn-sm edit_dept" data-bs-toggle="modal" data-id="' + msg.jtid + '" data-bs-target="#editdepartmentmodal">' +
-							'<i class="feather feather-edit" data-bs-toggle="tooltip" data-original-title="Edit"></i></a>', '<a class=\"btn btn-danger btn-icon btn-sm delete_dept\" data-bs-toggle="tooltip" data-original-title="Delete" data-id="' + msg.jtid + '"><i class="feather feather-trash-2"></i></a>'
+							serial, msg.dept_type, msg.tier, '<a class="btn btn-primary btn-icon btn-sm edit_dept" data-bs-toggle="modal" data-id="' + msg.dt_id + '" data-bs-target="#editdepartmentmodal">' +
+							'<i class="feather feather-edit" data-bs-toggle="tooltip" data-original-title="Edit"></i></a>', '<a class=\"btn btn-danger btn-icon btn-sm delete_dept\" data-bs-toggle="tooltip" data-original-title="Delete" data-id="' + msg.dt_id + '"><i class="feather feather-trash-2"></i></a>'
 						]).draw();
-						row.nodes().to$().attr('id', 'id_' + msg.jtid);
+						row.nodes().to$().attr('id', 'id_' + msg.dt_id);
 						row.nodes().to$().attr('class', 'serial');
 
-						$('#id_' + msg.jtid).find("td:eq(1)").attr('id', 'jt_' + msg.jtid);
+						$('#id_' + msg.dt_id).find("td:eq(1)").attr('id', 'dept_' + msg.dt_id);
 
-						$('#jt_name').val('');
+						$('#dept_type').val('');
 						$('#adddepartmentmodal').modal('hide');
 					}
 				}
@@ -169,42 +181,45 @@
 		})
 
 		$('table').on('click', '.edit_dept', function() {
-			var jtid = $(this).attr('data-id');
+			var dt_id = $(this).attr('data-id');
 			$.ajax({
-				url: 'get-jt-by-id',
+				url: 'get-dept-type-by-id',
 				type: 'POST',
 				dataType: 'json',
 				data: {
-					jtid: jtid
+					dt_id: dt_id
 				},
 				success: function(msg) {
-					// console.log(msg.jt.job_title)
-					$('#up_jt_id').val(msg.jt.jtid);
-					$('#up_jt_name').val(msg.jt.job_title);
+					/* console.log(msg.dept.dt_id) */
+					$('#up_dt_id').val(msg.dept.dt_id);
+					$('#up_dept_name').val(msg.dept.dept_type);
+					$('#up_tier').val(msg.dept.tier);
 				}
 			})
 		})
 
-		$('#up_jt_form').submit(function(e) {
+		$('#up_dept_form').submit(function(e) {
 			e.preventDefault();
 			var form_data = $(this).serialize();
-			var jtid = $('#up_jt_id').val();
-			var jt = $('#up_jt_name').val();
+			var dt_id = $('#up_dt_id').val();
+			var dept = $('#up_dept_name').val();
 
 
 			$.ajax({
-				url: 'update-jt',
+				url: 'update-dept-type',
 				type: 'POST',
 				dataType: 'json',
 				data: form_data,
 				success: function(msg) {
+					console.log(msg);
 					if (msg.success == 'success') {
 						$('#editdepartmentmodal').modal('hide');
 						Swal.fire({
-							title: '<h6 class="text-success"><b>Job Title Added Successfully</b></h6>',
+							title: '<h6 class="text-success"><b>Department Type Updated Successfully</b></h6>',
 							icon: 'success'
 						})
-						$('#jt_' + jtid).html(msg.jt_name);
+						$('#dept_' + dt_id).html(msg.dept_type);
+						$('#tier_' + dt_id).html(msg.tier);
 					}
 				}
 			})
@@ -212,7 +227,7 @@
 
 
 		$('table').on('click', '.delete_dept', function() {
-			var jtid = $(this).attr('data-id');
+			var dt_id = $(this).attr('data-id');
 
 			var myTable = $('.table-vcenter').DataTable();
 
@@ -230,20 +245,20 @@
 				if (result.isConfirmed) {
 
 					$.ajax({
-						url: 'delete-jt',
+						url: 'delete-dept-type',
 						type: 'POST',
 						dataType: 'JSON',
 						data: {
-							jtid: jtid
+							dt_id: dt_id
 						},
 						success: function(msg) {
 							if (msg.success == 'success') {
 								Swal.fire(
 									'Deleted!',
-									'Job Title has been deleted.',
+									'Department Type has been deleted.',
 									'success'
 								)
-								myTable.row('#id_' + jtid).remove().draw();
+								myTable.row('#id_' + dt_id).remove().draw();
 
 								var i = 0;
 								$('.table-vcenter tbody tr').find('td:first').each(function() {
@@ -260,4 +275,17 @@
 		})
 	})
 </script>
-<script src="<?php echo base_url() ?>assets/js/hr/hr-department.js"></script>
+<?php /* ?>
+<script src="<?php echo base_url() ?>assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
+<script src="<?php echo base_url() ?>assets/plugins/datatable/js/dataTables.bootstrap5.js"></script>
+<script src="<?php echo base_url() ?>assets/plugins/datatable/js/dataTables.buttons.min.js"></script>
+<script src="<?php echo base_url() ?>assets/plugins/datatable/js/buttons.bootstrap5.min.js"></script>
+<script src="<?php echo base_url() ?>assets/plugins/datatable/dataTables.responsive.min.js"></script>
+<script src="<?php echo base_url() ?>assets/plugins/datatable/responsive.bootstrap5.min.js"></script>
+<?php  */ ?>
+
+
+
+<!-- <script src="<?php echo base_url() ?>assets/plugins/p-scrollbar/p-scrollbar.js"></script> -->
+<!-- <script src="<?php echo base_url() ?>assets/plugins/p-scrollbar/p-scroll1.js"></script> -->
+<script src="<?php echo base_url() ?>assets/js/hr/hr-Department.js"></script>

@@ -246,13 +246,11 @@
 								)
 								myTable.row('#id_' + edl_id).remove().draw();
 
-								$('.table-vcenter tbody tr').each(function(i) {
-
-									if (!myTable.data().any()) {
-										$('.dataTables_empty').addClass('text-center')
-									} else {
-										$(this).find("td:first").html(i + 1);
-
+								var i = 0;
+								$('.table-vcenter tbody tr').find('td:first').each(function() {
+									if ($(this).html() != 'No data available in table') {
+										i++;
+										$(this).html(i);
 									}
 								});
 							}
