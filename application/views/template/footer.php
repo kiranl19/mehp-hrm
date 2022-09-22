@@ -24,6 +24,9 @@
 <!--Othercharts js-->
 <script src="<?php echo base_url() ?>assets/plugins/othercharts/jquery.sparkline.min.js"></script>
 
+
+<script src="<?php echo base_url() ?>assets/plugins/circle-progress/circle-progress.min.js"></script>
+
 <!--Sidemenu js-->
 <script src="<?php echo base_url() ?>assets/plugins/sidemenu/sidemenu.js"></script>
 

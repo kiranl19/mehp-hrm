@@ -51,32 +51,35 @@ defined('BASEPATH') or exit('No direct script access allowed');
 */
 
 // HR dashboard
-$route['hr-dashboard'] 			= 'HRController/hr_dashboard';
-$route['hr-department'] 		= 'HRController/hr_department';
-$route['hr-emplist'] 			= 'HRController/hr_emplist';
-$route['hr-empview'] 			= 'HRController/hr_empview';
-$route['hr-addemployee'] 		= 'HRController/hr_addemployee';
-$route['hr-attlist'] 			= 'HRController/hr_attlist';
-$route['hr-attuser'] 			= 'HRController/hr_attuser';
-$route['hr-attview'] 			= 'HRController/hr_attview';
-$route['hr-overviewcldr'] 		= 'HRController/hr_overviewcldr';
-$route['hr-attmark'] 			= 'HRController/hr_attmark';
-$route['hr-leaves'] 			= 'HRController/hr_leaves';
-$route['hr-leavesapplication'] 	= 'HRController/hr_leavesapplication';
-$route['hr-recentleaves'] 		= 'HRController/hr_recentleaves';
-$route['hr-award'] 				= 'HRController/hr_award';
-$route['hr-holiday'] 			= 'HRController/hr_holiday';
-$route['hr-notice'] 			= 'HRController/hr_notice';
-$route['hr-expenses'] 			= 'HRController/hr_expenses';
-$route['hr-empsalary'] 			= 'HRController/hr_empsalary';
-$route['hr-addpayroll'] 		= 'HRController/hr_addpayroll';
-$route['hr-editpayroll'] 		= 'HRController/hr_editpayroll';
-$route['hr-events'] 			= 'HRController/hr_events';
-$route['hr-settings'] 			= 'HRController/hr_settings';
-$route['hr-job-title'] 			= 'HRController/hr_job_title';
-$route['hr-education-level'] 	= 'HRController/hr_education_level';
-$route['hr-address-types'] 		= 'HRController/hr_address_types';
-$route['hr-department-type'] 	= 'HRController/hr_department_types';
+$route['hr-dashboard'] 				= 'HRController/hr_dashboard';
+$route['hr-department'] 			= 'HRController/hr_department';
+$route['hr-emplist'] 				= 'HRController/hr_emplist';
+$route['hr-empview'] 				= 'HRController/hr_empview';
+$route['hr-addemployee'] 			= 'HRController/hr_addemployee';
+$route['hr-attlist'] 				= 'HRController/hr_attlist';
+$route['hr-attuser'] 				= 'HRController/hr_attuser';
+$route['hr-attview'] 				= 'HRController/hr_attview';
+$route['hr-overviewcldr'] 			= 'HRController/hr_overviewcldr';
+$route['hr-attmark'] 				= 'HRController/hr_attmark';
+$route['hr-leaves'] 				= 'HRController/hr_leaves';
+$route['hr-leavesapplication'] 		= 'HRController/hr_leavesapplication';
+$route['hr-recentleaves'] 			= 'HRController/hr_recentleaves';
+$route['hr-award'] 					= 'HRController/hr_award';
+$route['hr-holiday'] 				= 'HRController/hr_holiday';
+$route['hr-notice'] 				= 'HRController/hr_notice';
+$route['hr-expenses'] 				= 'HRController/hr_expenses';
+$route['hr-empsalary'] 				= 'HRController/hr_empsalary';
+$route['hr-addpayroll'] 			= 'HRController/hr_addpayroll';
+$route['hr-editpayroll'] 			= 'HRController/hr_editpayroll';
+$route['hr-events'] 				= 'HRController/hr_events';
+$route['hr-settings'] 				= 'HRController/hr_settings';
+$route['hr-job-title'] 				= 'HRController/hr_job_title';
+$route['hr-education-level'] 		= 'HRController/hr_education_level';
+$route['hr-address-types'] 			= 'HRController/hr_address_types';
+$route['hr-department-type'] 		= 'HRController/hr_department_types';
+$route['hr-relationships'] 			= 'HRController/hr_relationships';
+$route['hr-kyc'] 					= 'HRController/hr_kyc';
+$route['hr-occupation-relations']	= 'HRController/hr_occupation_relations';
 
 // Employee Dashboard
 $route['employee-dashboard'] 	= 'EmployeeController/employee_dashboard';
@@ -85,6 +88,8 @@ $route['employee-leaves'] 		= 'EmployeeController/employee_leaves';
 $route['employee-myleaves'] 	= 'EmployeeController/employee_myleaves';
 $route['employee-payslips'] 	= 'EmployeeController/employee_payslips';
 $route['employee-expenses'] 	= 'EmployeeController/employee_expenses';
+$route['profile'] 				= 'EmployeeController/employee_profile';
+$route['get-emp-address-by-add-type'] 	= 'EmployeeController/get_emp_address_by_add_type';
 
 // Task Dashboard
 $route['task-dashboard'] 	= 'TaskController/task_dashboard';
@@ -164,17 +169,41 @@ $route['update-edl'] 	= 'HRController/update_edl';
 
 
 // CRUD Education Level
-$route['add-address-type'] 		= 'HRController/add_address_type';
-$route['get-address-type-by-id'] = 'HRController/get_address_type_by_id';
-$route['update-address-type'] 	= 'HRController/update_address_type';
-$route['delete-address-type'] 	= 'HRController/delete_address_type';
+$route['add-address-type'] 			= 'HRController/add_address_type';
+$route['get-address-type-by-id'] 	= 'HRController/get_address_type_by_id';
+$route['update-address-type'] 		= 'HRController/update_address_type';
+$route['delete-address-type'] 		= 'HRController/delete_address_type';
 
 // CRUD Employee
-$route['ajax-add-employee'] = 'EmployeeController/ajax_add_employee';
-$route['ajax-add-employee-profile'] = 'EmployeeController/ajax_add_employee_profile';
-$route['ajax-add-employee-address'] = 'EmployeeController/ajax_add_employee_address';
-$route['upload-docs'] 		= 'EmployeeController/upload_docs';
+$route['ajax-add-employee'] 				= 'EmployeeController/ajax_add_employee';
+$route['ajax-add-employee-profile'] 		= 'EmployeeController/ajax_add_employee_profile';
+$route['ajax-add-employee-address'] 		= 'EmployeeController/ajax_add_employee_address';
+$route['ajax-add-employee-bank-details'] 	= 'EmployeeController/ajax_add_employee_bank_details';
+$route['upload-docs'] 						= 'EmployeeController/upload_docs';
+$route['ajax-add-relations'] 				= 'EmployeeController/ajax_add_relations';
+$route['ajax-delete-relations'] 			= 'EmployeeController/ajax_delete_relations';
 
+
+// CRUD Relationships
+$route['add-relationship'] 			= 'HRController/add_relationship';
+$route['get-relationship-by-id'] 	= 'HRController/get_relationship_by_id';
+$route['delete-relationship'] 		= 'HRController/delete_relationship';
+$route['update-relationship'] 		= 'HRController/update_relationship';
+
+
+
+// CRUD Relationships
+$route['add-kyc'] 			= 'HRController/add_kyc';
+$route['get-kyc-by-id'] 	= 'HRController/get_kyc_by_id';
+$route['delete-kyc'] 		= 'HRController/delete_kyc';
+$route['update-kyc'] 		= 'HRController/update_kyc';
+
+
+// CRUD Relationships
+$route['add-occupation'] 			= 'HRController/add_occupation';
+$route['get-occupation-by-id'] 		= 'HRController/get_occupation_by_id';
+$route['delete-occupation'] 		= 'HRController/delete_occupation';
+$route['update-occupation'] 		= 'HRController/update_occupation';
 
 
 $route['default_controller'] = 'AuthController';

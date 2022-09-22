@@ -53,12 +53,16 @@ class AuthController extends CI_Controller
 			redirect('/');
 		} else {
 
+			// print_r($user);die;
+
 			$session_array = array(
 				'username' 	=> $user['fname'] . " " . $user['lname'],
 				'fname' 	=> $user['fname'],
 				'lname' 	=> $user['lname'],
 				'mngr' 		=> $user['mngr'],
+				'email' 	=> $user['emailid'],
 				'emp_id' 	=> $user['emp_id'],
+				'phone' 	=> $user['primary_contact'],
 				'empcode'	=> $user['empcode'],
 				'designation'	=> $user['designation'],
 				'profile'	=> $user['profile'],

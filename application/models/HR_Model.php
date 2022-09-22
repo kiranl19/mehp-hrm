@@ -59,6 +59,28 @@ class HR_Model extends CI_Model
 		return $query->result_array();
 	}
 
+	function get_relationships()
+	{
+		$query = $this->db->get('relationships');
+
+		return $query->result_array();
+	}
+
+	function get_kyc()
+	{
+		$query = $this->db->get('kyc_list');
+
+		return $query->result_array();
+	}
+
+
+	function hr_occupation_relations()
+	{
+		$query = $this->db->get('occu_relation');
+
+		return $query->result_array();
+	}
+
 
 	function add_jt($jt)
 	{
@@ -173,4 +195,159 @@ class HR_Model extends CI_Model
 		$query = $this->db->update('address_type', $array);
 		return true;
 	}
+
+	function get_emp_by_id($empcode)
+	{
+		$this->db->where('emplid', $empcode);
+		$query = $this->db->get('employee');
+		return $query->row_array();
+	}
+
+	function get_emp_profile_by_id($empcode)
+	{
+		$this->db->where('fk_employee', $empcode);
+		$query = $this->db->get('emp_profile');
+		return $query->row_array();
+	}
+
+	function get_emp_address_by_id($empcode)
+	{
+		$this->db->order_by('ead_id', 'DESC');
+		$this->db->where('fk_employee', $empcode);
+		$query = $this->db->get('emp_address');
+		return $query->row_array();
+	}
+
+	function get_emp_bank_by_id($empcode)
+	{
+		$this->db->where('e_id', $empcode);
+		$query = $this->db->get('accstat');
+		return $query->row_array();
+	}
+
+	function get_emp_relations_by_id($empcode)
+	{
+		$this->db->order_by('er_id', 'ASC');
+		$this->db->where('fk_employee', $empcode);
+		$query = $this->db->get('emp_relation');
+		return $query->result_array();
+	}
+
+	function add_relationship($relation)
+	{
+		$array = array(
+			'name' => ucwords($relation['name']),
+			'loaddt' => date('Y-m-d H:i:s'),
+		);
+
+		$this->db->insert('relationships', $array);
+
+		$this->db->trans_complete();
+		return $this->db->insert_id();
+	}
+
+	function get_relationship_by_id($empcode)
+	{
+		$this->db->where('rs_id', $empcode);
+		$query = $this->db->get('relationships');
+		return $query->row_array();
+	}
+
+	function delete_relationship($relation)
+	{
+		$this->db->where('rs_id', $relation);
+		$query = $this->db->delete('relationships');
+		return true;
+	}
+
+	function update_relationship($relation)
+	{
+		$array = array(
+			'name' => ucwords($relation['name']),
+			'loaddt' => date('Y-m-d H:i:s'),
+		);
+
+		$this->db->where('rs_id', $relation['rs_id']);
+		$query = $this->db->update('relationships', $array);
+		return true;
+	}
+
+	function add_kyc($kyc)
+	{
+		$array = array(
+			'kyc_name' => ucwords($kyc['kyc_name']),
+			'loaddt' => date('Y-m-d H:i:s'),
+		);
+
+		$this->db->insert('kyc_list', $array);
+
+		$this->db->trans_complete();
+		return $this->db->insert_id();
+	}
+	
+	function get_kyc_by_id($empcode)
+	{
+		$this->db->where('kyc_id', $empcode);
+		$query = $this->db->get('kyc_list');
+		return $query->row_array();
+	}
+	
+	function delete_kyc($kyc)
+	{
+		$this->db->where('kyc_id', $kyc);
+		$query = $this->db->delete('kyc_list');
+		return true;
+	}
+	
+	function update_kyc($kyc)
+	{
+		$array = array(
+			'kyc_name' => ucwords($kyc['kyc_name']),
+			'loaddt' => date('Y-m-d H:i:s'),
+		);
+
+		$this->db->where('kyc_id', $kyc['kyc_id']);
+		$query = $this->db->update('kyc_list', $array);
+		return true;
+	}
+
+	function add_occupation($occupation)
+	{
+		$array = array(
+			'name' => ucwords($occupation['name']),
+			'loaddt' => date('Y-m-d H:i:s'),
+		);
+
+		$this->db->insert('occu_relation', $array);
+
+		$this->db->trans_complete();
+		return $this->db->insert_id();
+	}
+
+	function get_occupation_by_id($empcode)
+	{
+		$this->db->where('or_id', $empcode);
+		$query = $this->db->get('occu_relation');
+		return $query->row_array();
+	}
+
+	function delete_occupation($occupation)
+	{
+		$this->db->where('or_id', $occupation);
+		$query = $this->db->delete('occu_relation');
+		return true;
+	}
+
+	function update_occupation($occupation)
+	{
+		$array = array(
+			'name' => ucwords($occupation['name']),
+			'loaddt' => date('Y-m-d H:i:s'),
+		);
+
+		$this->db->where('or_id', $occupation['or_id']);
+		$query = $this->db->update('occu_relation', $array);
+		return true;
+	}
+
 }

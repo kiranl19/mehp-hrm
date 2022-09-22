@@ -53,9 +53,20 @@ class HRController extends CI_Controller
 
 	public function hr_empview()
 	{
+		$data['emp'] = $this->HR_Model->get_emp_by_id($_SESSION['emp_id']);
+		$data['profile'] = $this->HR_Model->get_emp_profile_by_id($_SESSION['emp_id']);
+		$data['address'] = $this->HR_Model->get_emp_address_by_id($_SESSION['emp_id']);
+		$data['bank'] = $this->HR_Model->get_emp_bank_by_id($_SESSION['emp_id']);
+		$data['relations'] = $this->HR_Model->get_emp_relations_by_id($_SESSION['emp_id']);
+		$data['relationships'] = $this->HR_Model->get_relationships();
+		$data['occupations'] = $this->HR_Model->hr_occupation_relations();
+
+		$data['addTypes'] = $this->HR_Model->get_add_type();
+
+		$data['gender'] = $this->HR_Model->get_gender();
 		$this->load->view('template/header-script');
 		$this->load->view('template/header');
-		$this->load->view('hr/hr-empview');
+		$this->load->view('hr/hr-empview', $data);
 		$this->load->view('template/footer');
 	}
 
@@ -64,6 +75,8 @@ class HRController extends CI_Controller
 		$data['gender'] = $this->HR_Model->get_gender();
 		$data['addTypes'] = $this->HR_Model->get_add_type();
 		$data['depts'] = $this->HR_Model->get_departments();
+		$data['relationships'] = $this->HR_Model->get_relationships();
+		$data['occupations'] = $this->HR_Model->hr_occupation_relations();
 		$this->load->view('template/header-script');
 		$this->load->view('template/header');
 		$this->load->view('hr/hr-addemployee', $data);
@@ -233,13 +246,39 @@ class HRController extends CI_Controller
 		$this->load->view('template/footer');
 	}
 
-
 	public function hr_department_types()
 	{
 		$data['deptTypes'] = $this->HR_Model->get_dept_type();
 		$this->load->view('template/header-script');
 		$this->load->view('template/header');
 		$this->load->view('hr/hr-department-types', $data);
+		$this->load->view('template/footer');
+	}
+
+	public function hr_relationships()
+	{
+		$data['relationships'] = $this->HR_Model->get_relationships();
+		$this->load->view('template/header-script');
+		$this->load->view('template/header');
+		$this->load->view('hr/hr-relationships', $data);
+		$this->load->view('template/footer');
+	}
+
+	public function hr_kyc()
+	{
+		$data['kycs'] = $this->HR_Model->get_kyc();
+		$this->load->view('template/header-script');
+		$this->load->view('template/header');
+		$this->load->view('hr/hr-kyc', $data);
+		$this->load->view('template/footer');
+	}
+
+	public function hr_occupation_relations()
+	{
+		$data['occupations'] = $this->HR_Model->hr_occupation_relations();
+		$this->load->view('template/header-script');
+		$this->load->view('template/header');
+		$this->load->view('hr/hr-occupation-relations', $data);
 		$this->load->view('template/footer');
 	}
 
@@ -361,4 +400,133 @@ class HRController extends CI_Controller
 			));
 		}
 	}
+
+
+	function add_relationship()
+	{
+		$relation = $this->HR_Model->add_relationship($_POST);
+
+		echo json_encode(array(
+			'success' => 'success',
+			'name' => ucwords($_POST['name']),
+			'rs_id' => $relation
+		));
+	}
+
+	function get_relationship_by_id()
+	{
+		$getRelation = $this->HR_Model->get_relationship_by_id($_POST['rs_id']);
+
+		$data['success'] = 'success';
+		$data['relationship'] = $getRelation;
+
+		echo json_encode($data);
+	}
+
+	function delete_relationship()
+	{
+		$relation = $this->HR_Model->delete_relationship($_POST['rs_id']);
+
+		if ($relation == true) {
+			echo json_encode(array(
+				'success' => 'success',
+			));
+		}
+	}
+
+	function update_relationship()
+	{
+		$this->HR_Model->update_relationship($_POST);
+
+		echo json_encode(array(
+			'success' => 'success',
+			'name' => ucwords($_POST['name'])
+		));
+	}
+
+	function add_kyc()
+	{
+		$kyc = $this->HR_Model->add_kyc($_POST);
+
+		echo json_encode(array(
+			'success' => 'success',
+			'kyc_name' => ucwords($_POST['kyc_name']),
+			'kyc_id' => $kyc
+		));
+	}
+
+	function get_kyc_by_id()
+	{
+		$getKyc = $this->HR_Model->get_kyc_by_id($_POST['kyc_id']);
+
+		$data['success'] = 'success';
+		$data['kyc'] = $getKyc;
+
+		echo json_encode($data);
+	}
+
+	function delete_kyc()
+	{
+		$kyc = $this->HR_Model->delete_kyc($_POST['kyc_id']);
+
+		if ($kyc == true) {
+			echo json_encode(array(
+				'success' => 'success',
+			));
+		}
+	}
+
+	function update_kyc()
+	{
+		$this->HR_Model->update_kyc($_POST);
+
+		echo json_encode(array(
+			'success' => 'success',
+			'kyc_name' => ucwords($_POST['kyc_name'])
+		));
+	}
+
+
+	function add_occupation()
+	{
+		$occupation = $this->HR_Model->add_occupation($_POST);
+
+		echo json_encode(array(
+			'success' => 'success',
+			'name' => ucwords($_POST['name']),
+			'or_id' => $occupation
+		));
+	}
+
+	function get_occupation_by_id()
+	{
+		$getOccupation = $this->HR_Model->get_occupation_by_id($_POST['or_id']);
+
+		$data['success'] = 'success';
+		$data['occupation'] = $getOccupation;
+
+		echo json_encode($data);
+	}
+
+	function delete_occupation()
+	{
+		$occupation = $this->HR_Model->delete_occupation($_POST['or_id']);
+
+		if ($occupation == true) {
+			echo json_encode(array(
+				'success' => 'success',
+			));
+		}
+	}
+
+	function update_occupation()
+	{
+		$this->HR_Model->update_occupation($_POST);
+
+		echo json_encode(array(
+			'success' => 'success',
+			'name' => ucwords($_POST['name'])
+		));
+	}
+
 }

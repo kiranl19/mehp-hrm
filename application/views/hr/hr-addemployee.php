@@ -1,3 +1,13 @@
+<style>
+	.card1 {
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+		transition: 0.3s;
+	}
+
+	.card1:hover {
+		box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
+	}
+</style>
 <div class="app-content main-content">
 	<div class="side-app main-container">
 
@@ -118,6 +128,7 @@
 						<ul class="nav panel-tabs">
 							<li class="ms-4"><a href="#tab5" class="active" data-bs-toggle="tab">Personal Details</a></li>
 							<li><a href="#tab10" data-bs-toggle="tab">Profile</a></li>
+							<li><a href="#tab11" data-bs-toggle="tab">Relations</a></li>
 							<li><a href="#tab9" data-bs-toggle="tab">Address</a></li>
 							<li><a href="#tab6" data-bs-toggle="tab">Company Details</a></li>
 							<li><a href="#tab7" data-bs-toggle="tab">Bank Details</a></li>
@@ -219,16 +230,7 @@
 											</div>
 										</div>
 									</div>
-									<!-- <div class="form-group ">
-										<div class="row">
-											<div class="col-md-3">
-												<label class="form-label mb-0 mt-2">Father Name</label>
-											</div>
-											<div class="col-md-9">
-												<input type="text" name="" id="" class="form-control" placeholder="Name">
-											</div>
-										</div>
-									</div> -->
+
 									<div class="form-group">
 										<div class="row">
 											<div class="col-md-3">
@@ -246,8 +248,6 @@
 											<div class="col-md-3">
 												<label class="form-label">Gender</label>
 											</div>
-											<?php //print_r($gender) 
-											?>
 											<div class="col-md-9">
 												<div class="row">
 													<?php foreach ($gender as $gender) : ?>
@@ -301,143 +301,6 @@
 													<span class="custom-switch-indicator"></span>
 													<span class="custom-switch-description">On/Off</span>
 												</label>
-											</div>
-										</div>
-									</div>
-									<div class="form-group text-end">
-										<input type="button" class="btn btn-danger w-15" value="Clear">
-										<input type="submit" class="btn btn-primary w-15" value="Submit">
-									</div>
-								</form>
-							</div>
-						</div>
-
-						<div class="tab-pane" id="tab10">
-							<div class="card-body">
-								<form id="profile_details">
-									<div class="form-group">
-										<div class="row">
-											<div class="col-md-2">
-												<label class="form-label mb-0 mt-2">Employee Id</label>
-											</div>
-											<div class="col-md-4">
-												<input type="text" class="form-control" placeholder="Employee Id" name="emp_id6" id="emp_id6" value="">
-											</div>
-											<div class="col-md-2">
-												<label class="form-label mb-0 mt-2">Blood Group</label>
-											</div>
-											<div class="col-md-4">
-												<select name="b_group" id="b_group" class="form-control custom-select select2" data-placeholder="Select Group">
-													<option label="Select Group"></option>
-													<option value="1">A+</option>
-													<option value="2">B+</option>
-													<option value="3">O+</option>
-													<option value="4">AB+</option>
-													<option value="5">A-</option>
-													<option value="6">B-</option>
-													<option value="7">O-</option>
-													<option value="8">AB-</option>
-												</select>
-											</div>
-										</div>
-									</div>
-
-									<div class="form-group ">
-										<div class="row g-0">
-											<div class="col-md-2">
-												<label class="form-label mb-0 mt-2">Date Of Birth</label>
-											</div>
-											<div class="col-md-4">
-												<input type="date" name="dob" id="dob" class="form-control" placeholder="DD-MM-YYY">
-											</div>
-											<div class="col-md-2">
-												<label class="form-label mb-0 mt-2">Place Of Birth</label>
-											</div>
-											<div class="col-md-4">
-												<input type="text" name="pob" id="pob" class="form-control" placeholder="Place of Birth">
-											</div>
-										</div>
-									</div>
-
-									<div class="form-group ">
-										<div class="row">
-											<div class="col-md-2">
-												<label class="form-label mb-0 mt-2">Is Indian?</label>
-											</div>
-											<div class="col-md-4">
-												<select name="is_indian" id="is_indian" class="form-control custom-select select2" data-placeholder="Select Group">
-													<option label="Select"></option>
-													<option value="1">Yes</option>
-													<option value="0">No</option>
-												</select>
-											</div>
-											<div class="col-md-2">
-												<label class="form-label mb-0 mt-2">Nationality</label>
-											</div>
-											<div class="col-md-4">
-												<input type="text" name="nationality" id="nationality" class="form-control" placeholder="Nationality">
-											</div>
-										</div>
-									</div>
-
-									<div class="form-group">
-										<div class="row">
-											<div class="col-md-2">
-												<label class="form-label mb-0 mt-2">Marital Status</label>
-											</div>
-											<div class="col-md-4">
-												<select name="m_status" id="m_status" class="form-control custom-select select2" data-placeholder="Select">
-													<option label="Select"></option>
-													<option value="1">Single</option>
-													<option value="2">Married</option>
-													<option value="3">Divorced</option>
-												</select>
-											</div>
-											<div class="col-md-2">
-												<label class="form-label mb-0 mt-2">Siblings</label>
-											</div>
-											<div class="col-md-4">
-												<input type="text" name="siblings" id="siblings" class="form-control" placeholder="Siblings">
-											</div>
-										</div>
-									</div>
-
-									<div class="form-group">
-										<div class="row">
-											<div class="col-md-2">
-												<label class="form-label mb-0 mt-2">Physically Challenged</label>
-											</div>
-											<div class="col-md-4">
-												<select name="phy_challenged" id="phy_challenged" class="form-control custom-select select2" data-placeholder="Select">
-													<option label="Select"></option>
-													<option value="1">Yes</option>
-													<option value="0">No</option>
-												</select>
-											</div>
-
-											<div class="col-md-2">
-												<label class="form-label mb-0 mt-2">Religion</label>
-											</div>
-											<div class="col-md-4">
-												<input type="text" name="religion" id="religion" class="form-control" placeholder="Religion">
-											</div>
-
-										</div>
-									</div>
-
-									<div class="form-group">
-										<div class="row">
-											<div class="col-md-2">
-												<label class="form-label mb-0 mt-2">Total Work Experience</label>
-											</div>
-											<div class="col-md-4">
-												<input type="text" name="experience" id="experience" class="form-control" placeholder="Total Work Experience">
-											</div>
-											<div class="col-md-2">
-												<label class="form-label mb-0 mt-2">No. of Company Worked</label>
-											</div>
-											<div class="col-md-4">
-												<input type="text" name="no_of_comp" id="no_of_comp" class="form-control" placeholder="No. of Company Worked">
 											</div>
 										</div>
 									</div>
@@ -586,6 +449,145 @@
 							</div>
 
 						</div>
+
+						<div class="tab-pane" id="tab10">
+							<div class="card-body">
+								<form id="profile_details">
+									<div class="form-group">
+										<div class="row">
+											<div class="col-md-2">
+												<label class="form-label mb-0 mt-2">Employee Id</label>
+											</div>
+											<div class="col-md-4">
+												<input type="text" class="form-control" placeholder="Employee Id" name="emp_id6" id="emp_id6" value="">
+											</div>
+											<div class="col-md-2">
+												<label class="form-label mb-0 mt-2">Blood Group</label>
+											</div>
+											<div class="col-md-4">
+												<select name="b_group" id="b_group" class="form-control custom-select select2" data-placeholder="Select Group">
+													<option label="Select Group"></option>
+													<option value="1">A+</option>
+													<option value="2">B+</option>
+													<option value="3">O+</option>
+													<option value="4">AB+</option>
+													<option value="5">A-</option>
+													<option value="6">B-</option>
+													<option value="7">O-</option>
+													<option value="8">AB-</option>
+												</select>
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group ">
+										<div class="row g-0">
+											<div class="col-md-2">
+												<label class="form-label mb-0 mt-2">Date Of Birth</label>
+											</div>
+											<div class="col-md-4">
+												<input type="date" name="dob" id="dob" class="form-control" placeholder="DD-MM-YYY">
+											</div>
+											<div class="col-md-2">
+												<label class="form-label mb-0 mt-2">Place Of Birth</label>
+											</div>
+											<div class="col-md-4">
+												<input type="text" name="pob" id="pob" class="form-control" placeholder="Place of Birth">
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group ">
+										<div class="row">
+											<div class="col-md-2">
+												<label class="form-label mb-0 mt-2">Is Indian?</label>
+											</div>
+											<div class="col-md-4">
+												<select name="is_indian" id="is_indian" class="form-control custom-select select2" data-placeholder="Select Group">
+													<option label="Select"></option>
+													<option value="1">Yes</option>
+													<option value="0">No</option>
+												</select>
+											</div>
+											<div class="col-md-2">
+												<label class="form-label mb-0 mt-2">Nationality</label>
+											</div>
+											<div class="col-md-4">
+												<input type="text" name="nationality" id="nationality" class="form-control" placeholder="Nationality">
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<div class="row">
+											<div class="col-md-2">
+												<label class="form-label mb-0 mt-2">Marital Status</label>
+											</div>
+											<div class="col-md-4">
+												<select name="m_status" id="m_status" class="form-control custom-select select2" data-placeholder="Select">
+													<option label="Select"></option>
+													<option value="1">Single</option>
+													<option value="2">Married</option>
+													<option value="3">Divorced</option>
+												</select>
+											</div>
+											<div class="col-md-2">
+												<label class="form-label mb-0 mt-2">Siblings</label>
+											</div>
+											<div class="col-md-4">
+												<input type="text" name="siblings" id="siblings" class="form-control" placeholder="Siblings">
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<div class="row">
+											<div class="col-md-2">
+												<label class="form-label mb-0 mt-2">Physically Challenged</label>
+											</div>
+											<div class="col-md-4">
+												<select name="phy_challenged" id="phy_challenged" class="form-control custom-select select2" data-placeholder="Select">
+													<option label="Select"></option>
+													<option value="1">Yes</option>
+													<option value="0">No</option>
+												</select>
+											</div>
+
+											<div class="col-md-2">
+												<label class="form-label mb-0 mt-2">Religion</label>
+											</div>
+											<div class="col-md-4">
+												<input type="text" name="religion" id="religion" class="form-control" placeholder="Religion">
+											</div>
+
+										</div>
+									</div>
+
+									<div class="form-group">
+										<div class="row">
+											<div class="col-md-2">
+												<label class="form-label mb-0 mt-2">Total Work Experience</label>
+											</div>
+											<div class="col-md-4">
+												<input type="text" name="experience" id="experience" class="form-control" placeholder="Total Work Experience">
+											</div>
+											<div class="col-md-2">
+												<label class="form-label mb-0 mt-2">No. of Company Worked</label>
+											</div>
+											<div class="col-md-4">
+												<input type="text" name="no_of_comp" id="no_of_comp" class="form-control" placeholder="No. of Company Worked">
+											</div>
+										</div>
+									</div>
+									<div class="form-group text-end">
+										<input type="button" class="btn btn-danger w-15" value="Clear">
+										<input type="submit" class="btn btn-primary w-15" value="Submit">
+									</div>
+								</form>
+							</div>
+						</div>
+
+
 						<div class="tab-pane" id="tab6">
 							<div class="card-body">
 								<form id="comp_details">
@@ -736,6 +738,10 @@
 													<option label="Select"></option>
 													<option value="1">Current</option>
 													<option value="2">Savings</option>
+													<option value="3">Salary</option>
+													<option value="4">NRI Account</option>
+													<option value="5">Recurring Deposit</option>
+													<option value="6">Fixed Deposit</option>
 												</select>
 											</div>
 										</div>
@@ -779,6 +785,7 @@
 											</div>
 											<div class="col-md-9">
 												<input type="text" name="acc_ifsc" id="acc_ifsc" class="form-control" placeholder="IFSC Code">
+												<span class="text-danger ifsc_error"></span>
 											</div>
 										</div>
 									</div>
@@ -791,6 +798,7 @@
 											</div>
 											<div class="col-md-9">
 												<input type="text" name="acc_pan" id="acc_pan" class="form-control" placeholder="PAN Number">
+												<span class="text-danger pan_error"></span>
 											</div>
 										</div>
 									</div>
@@ -822,8 +830,8 @@
 										<input type="button" class="btn btn-danger w-15" value="Clear">
 										<input type="submit" class="btn btn-primary w-15" value="Submit">
 									</div>
+								</form>
 							</div>
-							</form>
 						</div>
 						<div class="tab-pane" id="tab8">
 							<div class="card-body">
@@ -846,7 +854,7 @@
 											<div class="col-md-9">
 												<div class="form-group">
 													<label for="form-label" class="form-label"></label>
-													<input class="form-control" type="file" name="doc_photo" id="doc_photo">
+													<input class="form-control" type="file" accept="image/jpeg,image/gif,image/png,application/pdf,image/x-eps" name="doc_photo" id="doc_photo">
 												</div>
 											</div>
 										</div>
@@ -859,7 +867,7 @@
 											<div class="col-md-9">
 												<div class="form-group">
 													<label for="form-label" class="form-label"></label>
-													<input class="form-control" type="file" name="doc_resume" id="doc_resume">
+													<input class="form-control" type="file" accept="image/jpeg,image/gif,image/png,application/pdf,image/x-eps" name="doc_resume" id="doc_resume">
 												</div>
 											</div>
 										</div>
@@ -872,7 +880,7 @@
 											<div class="col-md-9">
 												<div class="form-group">
 													<label for="form-label" class="form-label"></label>
-													<input class="form-control" type="file" name="doc_id_proof" id="doc_id_proof">
+													<input class="form-control" type="file" accept="image/jpeg,image/gif,image/png,application/pdf,image/x-eps" name="doc_id_proof" id="doc_id_proof">
 												</div>
 											</div>
 										</div>
@@ -885,7 +893,7 @@
 											<div class="col-md-9">
 												<div class="form-group">
 													<label for="form-label" class="form-label"></label>
-													<input class="form-control" type="file" name="doc_offer_ltr" id="doc_offer_ltr">
+													<input class="form-control" type="file" accept="image/jpeg,image/gif,image/png,application/pdf,image/x-eps" name="doc_offer_ltr" id="doc_offer_ltr">
 												</div>
 											</div>
 										</div>
@@ -898,7 +906,7 @@
 											<div class="col-md-9">
 												<div class="form-group">
 													<label for="form-label" class="form-label"></label>
-													<input class="form-control" type="file" name="doc_jng_ltr" id="doc_jng_ltr">
+													<input class="form-control" type="file" accept="image/jpeg,image/gif,image/png,application/pdf,image/x-eps" name="doc_jng_ltr" id="doc_jng_ltr">
 												</div>
 											</div>
 										</div>
@@ -911,7 +919,7 @@
 											<div class="col-md-9">
 												<div class="form-group">
 													<label for="form-label" class="form-label"></label>
-													<input class="form-control" type="file" name="doc_aggr_ltr" id="doc_aggr_ltr">
+													<input class="form-control" type="file" accept="image/jpeg,image/gif,image/png,application/pdf,image/x-eps" name="doc_aggr_ltr" id="doc_aggr_ltr">
 												</div>
 											</div>
 										</div>
@@ -924,8 +932,16 @@
 											<div class="col-md-9">
 												<div class="form-group">
 													<label for="form-label" class="form-label"></label>
-													<input class="form-control" type="file" name="doc_expr_ltr" id="doc_expr_ltr">
+													<input class="form-control" type="file" accept="image/jpeg,image/gif,image/png,application/pdf,image/x-eps" name="doc_expr_ltr" id="doc_expr_ltr">
 												</div>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-3"></div>
+											<div class="col-sm-9" style="display: none;">
+												<textarea class="form-control" name="text1" id="text1"></textarea>
 											</div>
 										</div>
 									</div>
@@ -936,10 +952,92 @@
 								</form>
 							</div>
 						</div>
-						<!-- <div class="card-footer text-end">
-							<a href="javascript:void(0);" class="btn btn-primary">Save</a>
-							<a href="javascript:void(0);" class="btn btn-danger">Cancel</a>
-						</div> -->
+						<div class="tab-pane" id="tab11">
+							<div class="card-body">
+								<form id="relation_details">
+
+									<div id="clone">
+										<div class="clone">
+											<div class="card card1 p-4 rounded m-2">
+
+												<div class="form-group">
+													<div class="row">
+														<div class="col-md-3">
+															<div class="form-label mb-0 mt-2">Employee ID</div>
+														</div>
+														<div class="col-md-3">
+															<input type="text" name="emp_id11[]" id="emp_id11" class="form-control" placeholder="Employee Id">
+														</div>
+														<div class="col-md-3">
+															<div class="form-label mb-0 mt-2">Relation</div>
+														</div>
+														<div class="col-md-3">
+															<select name="relation[]" id="relation" class="form-control custom-select select2" data-placeholder="Select">
+																<option label="Relation"></option>
+																<?php foreach ($relationships as $relation) : ?>
+																	<option value="<?php echo $relation['rs_id'] ?>"><?php echo $relation['name'] ?></option>
+																<?php endforeach; ?>
+															</select>
+														</div>
+
+													</div>
+
+												</div>
+												<div class="form-group">
+													<div class="row">
+														<div class="col-md-3">
+															<div class="form-label mb-0 mt-2">Name</div>
+														</div>
+														<div class="col-md-3">
+															<input type="text" name="rel_name[]" id="rel_name" class="form-control" placeholder="Name">
+														</div>
+														<div class="col-md-3">
+															<div class="form-label mb-0 mt-2">Date of Birth</div>
+														</div>
+														<div class="col-md-3">
+															<input type="date" name="rel_dob[]" id="rel_dob" class="form-control" placeholder="DD-MM-YYY">
+														</div>
+													</div>
+												</div>
+												<div class="form-group">
+
+													<div class="row">
+														<div class="col-md-3">
+															<div class="form-label mb-0 mt-2">Occupation</div>
+														</div>
+														<div class="col-md-3">
+															<select name="rel_occ[]" id="rel_occ" class="form-control custom-select select2" data-placeholder="Select">
+																<option label="Occupation"></option>
+																<?php foreach ($occupations as $occupation) : ?>
+																	<option value="<?php echo $occupation['or_id'] ?>"><?php echo $occupation['name'] ?></option>
+																<?php endforeach; ?>
+															</select>
+														</div>
+														<div class="col-md-3">
+															<div class="form-label mb-0 mt-2">Occupation Name</div>
+														</div>
+														<div class="col-md-3">
+															<input type="text" name="rel_occ_name[]" id="rel_occ_name" class="form-control" placeholder="Occupation Name">
+														</div>
+													</div>
+												</div>
+												<div>
+													<a href="javascript:void(0)" class="p-1 rounded add" style="float: right;"><i class="fa fa-plus"></i></a>
+													<a href="javascript:void(0)" class="p-1 rounded remove" style="float: right;"><i class="fa fa-minus"></i></a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div id="cloned">
+									</div>
+
+									<div class="form-group text-end">
+										<input type="button" class="btn btn-danger w-15" value="Clear">
+										<input type="submit" class="btn btn-primary w-15" value="Submit">
+									</div>
+								</form>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -950,234 +1048,26 @@
 </div>
 
 <script src="<?php echo base_url() ?>assets/plugins/jquery/jquery.min.js"></script>
-
+<script src="<?php echo base_url() ?>assets/js/operations/operations.js"></script>
 <script>
 	$(function() {
-		$('#fname').on('keyup', function() {
-			var val = $(this).val();
-			var pass = capitalizeFirstLetter(val);
+		$('form').on('click', '.add', function() {
+			var div = $('div[id^="clone"]:last');
+			var clone = $('#clone').clone()
+			clone.find('span.select2').remove();
+			
+			$('#cloned').append(clone.html())
 
-			$('#add_fname').val(val);
+			// div.after(clone);
+			$('select').select2();
 
-			pass = pass.replace(/ /g, '')
-			$("#password").val(pass + "@123");
+			$('.form-group').find('select').select2({
+				width: '100%'
+			});
 		})
 
-		$('#lname').on('keyup', function() {
-			var val = $(this).val();
-			$('#add_lname').val(val);
-
+		$('form').on('click', '.remove', function() {
+			$("#cloned .clone:last").remove();
 		})
-	})
-
-	$(function() {
-		$('#emp_id').on('change', function() {
-			var emp_id = $(this).val();
-			$('#emp_id2').val(emp_id);
-			$('#emp_id3').val(emp_id);
-			$('#emp_id4').val(emp_id);
-			$('#emp_id5').val(emp_id);
-			$('#emp_id6').val(emp_id);
-		})
-	})
-
-	$(function() {
-		$('#dob1').on('change', function() {
-			var dob = $(this).val();
-			// alert(dob);
-			$('#dob').val(dob);
-			/* $('#emp_id2').val(emp_id);
-			$('#emp_id3').val(emp_id);
-			$('#emp_id4').val(emp_id);
-			$('#emp_id5').val(emp_id);
-			$('#emp_id6').val(emp_id); */
-		})
-	})
-	$(function() {
-		$('#emp_id').on('change', function() {
-			var emp_id = $(this).val();
-			$('#emp_id2').val(emp_id);
-			$('#emp_id3').val(emp_id);
-			$('#emp_id4').val(emp_id);
-			$('#emp_id5').val(emp_id);
-			$('#emp_id6').val(emp_id);
-		})
-	})
-
-	function cap(str) {
-		return str.replace(/([a-z,A-Z])/, function(match, value) {
-			return value.toUpperCase();
-		})
-	}
-
-	//capitalize only the first letter of the string. 
-	function capitalizeFirstLetter(string) {
-		return string.charAt(0).toUpperCase() + string.slice(1);
-	}
-	/* //capitalize all words of a string. 
-	function capitalizeWords(string) {
-		return string.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
-	}; */
-
-
-	function activaTab(tab) {
-		$('a[href="#' + tab + '"]').tab('show');
-	};
-
-
-	$(function() {
-		$('#employee_details').on('submit', function(e) {
-			e.preventDefault();
-
-			var form_data = $(this).serialize();
-			console.log(form_data);
-
-			$.ajax({
-				url: 'ajax-add-employee',
-				type: 'POST',
-				data: form_data,
-				enctype: 'multipart/form-data',
-				success: function(msg) {
-					console.log(msg);
-					if (msg.success == 'success') {
-
-						Swal.fire({
-							title: '<h6 class="text-success"><b>Employee Details Saved Successfully</b></h6>',
-							icon: 'success'
-						})
-
-						activaTab('tab10');
-						$('#back-to-top').click();
-					} else if (msg.error == 'error') {
-						Swal.fire({
-							title: '<h6 class="text-danger"><b>Employee ID Already Exists</b></h6>',
-							icon: 'info'
-						})
-					}
-				},
-				error: function(error) {
-					Swal.fire({
-						title: '<h6 class="text-danger"><b>Please Fill all fields..!</b></h6>',
-						icon: 'info'
-					})
-				}
-			})
-
-		});
-
-
-
-		$('#profile_details').on('submit', function(e) {
-			e.preventDefault();
-
-			var form_data = $(this).serialize();
-			console.log(form_data);
-
-			$.ajax({
-				url: 'ajax-add-employee-profile',
-				type: 'POST',
-				data: form_data,
-				enctype: 'multipart/form-data',
-				success: function(msg) {
-					console.log(msg);
-					if (msg.success == 'success') {
-
-						Swal.fire({
-							title: '<h6 class="text-success"><b>Employee Details Saved Successfully</b></h6>',
-							icon: 'success'
-						})
-
-						activaTab('tab10');
-						$('#back-to-top').click();
-					} else if (msg.error == 'error') {
-						Swal.fire({
-							title: '<h6 class="text-danger"><b>Employee ID Already Exists</b></h6>',
-							icon: 'info'
-						})
-					}
-				},
-				error: function(error) {
-					Swal.fire({
-						title: '<h6 class="text-danger"><b>Please Fill all fields..!</b></h6>',
-						icon: 'info'
-					})
-				}
-			})
-
-		});
-
-
-
-		$('#address_details').on('submit', function(e) {
-			e.preventDefault();
-
-			var form_data = $(this).serialize();
-			console.log(form_data);
-
-			$.ajax({
-				url: 'ajax-add-employee-address',
-				type: 'POST',
-				data: form_data,
-				enctype: 'multipart/form-data',
-				success: function(msg) {
-					console.log(msg);
-					if (msg.success == 'success') {
-
-						Swal.fire({
-							title: '<h6 class="text-success"><b>Employee Details Saved Successfully</b></h6>',
-							icon: 'success'
-						})
-
-						activaTab('tab10');
-						$('#back-to-top').click();
-					} else if (msg.error == 'error') {
-						Swal.fire({
-							title: '<h6 class="text-danger"><b>Employee ID Already Exists</b></h6>',
-							icon: 'info'
-						})
-					}
-				},
-				error: function(error) {
-					Swal.fire({
-						title: '<h6 class="text-danger"><b>Please Fill all fields..!</b></h6>',
-						icon: 'info'
-					})
-				}
-			})
-
-		});
-
-		$('#comp_details').on('submit', function(e) {
-			e.preventDefault();
-			activaTab('tab7');
-			$('#back-to-top').click();
-
-		});
-
-		$('#bank_details').on('submit', function(e) {
-			e.preventDefault();
-			activaTab('tab8');
-			$('#back-to-top').click();
-
-		});
-
-		$('#doc_details').on('submit', function(e) {
-			e.preventDefault();
-			// location.reload()
-
-			var data = 1;
-			$.ajax({
-				url: 'upload-docs',
-				type: 'POST',
-				dataType: 'JSON',
-				data: data,
-				success: function(resp) {
-					console.log(resp);
-
-				}
-			})
-
-		});
-
 	})
 </script>

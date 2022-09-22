@@ -178,10 +178,10 @@
 								</a>
 								<div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow animated">
 									<div class="p-3 text-center border-bottom">
-										<a href="profile-1.html" class="text-center user pb-0 font-weight-bold"><?php echo $_SESSION['fname'] . " " . $_SESSION['lname'] ?></a>
+										<a href="profile" class="text-center user pb-0 font-weight-bold"><?php echo $_SESSION['fname'] . " " . $_SESSION['lname'] ?></a>
 										<p class="text-center user-semi-title"><?php echo $_SESSION['designation'] ?></p>
 									</div>
-									<a class="dropdown-item d-flex" href="profile-1.html">
+									<a class="dropdown-item d-flex" href="profile">
 										<i class="feather feather-user me-3 fs-16 my-auto"></i>
 										<div class="mt-1">Profile</div>
 									</a>
@@ -270,6 +270,9 @@
 									<li><a href="hr-job-title" class="sub-slide-item">Job Titles</a></li>
 									<li><a href="hr-education-level" class="sub-slide-item">Education Level</a></li>
 									<li><a href="hr-address-types" class="sub-slide-item">Address Types</a></li>
+									<li><a href="hr-relationships" class="sub-slide-item">Relationships</a></li>
+									<li><a href="hr-kyc" class="sub-slide-item">KYC</a></li>
+									<li><a href="hr-occupation-relations" class="sub-slide-item">Occupation of Relations</a></li>
 									<li class="sub-slide2">
 										<a class="sub-side-menu__item2" data-bs-toggle="sub-slide2" href="javascript:void(0);"><span class="sub-side-menu__label">Employees</span><i class="sub-angle2 fa fa-angle-right"></i></a>
 										<ul class="sub-slide-menu2">
